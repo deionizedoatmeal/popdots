@@ -19,4 +19,4 @@ mkdir -p build && cd build/
 make
 sudo make install
 
-echo 'i3gaps installed'
+echo 'i3gaps-install.sh has completed'
