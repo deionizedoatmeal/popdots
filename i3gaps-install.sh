@@ -18,3 +18,5 @@ mkdir -p build && cd build/
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
 sudo make install
+
+printf 'i3gaps installed'
