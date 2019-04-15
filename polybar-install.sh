@@ -8,4 +8,4 @@ git clone https://github.com/jaagr/polybar.git polybarrepo
 
 cd polybarrepo && ./build.sh
 
-echo 'polybar installed'
+echo 'polybar-install.sh has completed'
