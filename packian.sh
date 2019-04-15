@@ -22,7 +22,7 @@ apt-get update
 apt-get upgrade
 
 #packages i use
-APPS4ian="libsox-fmt-mp3 sox gnome-terminal net-tools xinput alsa-utils mupdf rxvt-unicode ffmpeg htop i3lock scrot imagemagick x11-session-utils nautilus lightdm ubuntu-drivers-common neovim python-neovim python3-neovim tlp tlp-rdw chromium-browser ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
+APPS4ian="libsox-fmt-mp3 sox gnome-terminal net-tools xinput alsa-utils mupdf rxvt-unicode ffmpeg htop i3lock scrot imagemagick x11-session-utils nautilus ubuntu-drivers-common neovim python-neovim python3-neovim tlp tlp-rdw chromium-browser ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
 
 #apt-get install system76-drivers
 
