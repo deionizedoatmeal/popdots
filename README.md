@@ -7,10 +7,10 @@ To replicate my system, clone the repositoty:
 Then exceute the master script:
 ``` ./setup/master.sh ```
 This will install all of my perfered packages, remove some default Pop_OS packages, install i3-gaps and polybar from source, and then place the apropriate configs and scripts where they need to go. 
-Note: you may need to change the permissions on the scripts after downloading them to make them executable.
-``` sudo chmod +111 ~/setup/*.sh ```
+Note: you may need to change the permissions on the scripts after downloading them to make them executable:
+``` sudo chmod +111 ~/setup/*.sh ```.
 
-To just install polybar or i3gaps, the `polybar-install.sh` and `i3gaps-install.sh` should include all the necesary dependencies and work in isolation. 
+To just install polybar or i3gaps, the `polybar-install.sh` and `i3gaps-install.sh` scripts should include all the necesary dependencies and work in isolation. 
 
 # usage
-As most of this is just coubled together snipetts of bash code, and lists of dependencies from around the web, feel free to use any and all of this however you want. When begining with i3 I found it particularly annoying to set up sound, backlight, lock, session exit, battery profile, bluetooth, screenshot and media key controls from scratch, so hopefully this reposititory provides a more robust and polished i3 experience for others. 
+As most of this is just coubled together bits of bash code, and lists of dependencies from around the web, feel free to use any and all of this however you want. When begining with i3 I found it particularly annoying to set up sound, backlight, lock, session exit, battery profile, bluetooth, screenshot and media key controls from scratch, so hopefully this reposititory provides a more robust and polished i3 experience for others. 
