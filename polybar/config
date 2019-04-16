@@ -17,13 +17,14 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Comfortaa:pixelsize=28;2
-font-1 = UbuntuMono Nerd Font:size=24;1
+font-0 = Comfortaa:pixelsize=28;4
+font-1 = UbuntuMono Nerd Font:size=24;4
 font-2 = UbuntuMono Nerd Font:size=40;8
 
 modules-left = i3
 modules-center = date
-modules-right = backlight pulseaudio cpu memory battery
+modules-right = pulseaudio temperature backlight cpu memory battery
+
 
 tray-position = right
 tray-padding = 2
@@ -43,19 +44,53 @@ format = <label>
 label = %title%
 format-foreground = #f5f5f5
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/temperature]
+type = internal/temperature
+format = <label>
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+units = true
+
+label = %temperature-c%
+format-background = ${colors.foreground}
+format-foreground = ${colors.background}
+format-prefix = %{T3}%{T-}
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
 type = internal/battery
 format-charging = <animation-charging>  <label-charging>
 format-full = <label-full>
-label-charging = "  %percentage%% Charged  "
-label-full = "  Fully charged  "
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
-format-discharging = "    <label-discharging>"
-label-discharging = "  %percentage%%"
+label-charging = "%percentage%% Charged "
+label-full = " Fully charged "
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
+format-discharging = " <label-discharging>"
+label-discharging = "%percentage%%"
 
 format-charging-background = ${colors.background}
 format-charging-foreground = ${colors.foreground}
@@ -88,18 +123,18 @@ format-full-suffix-background = ${colors.background}
 [module/cpu]
 type = internal/cpu
 format = <label>
-label = "   %percentage%%  "
+label = "  %percentage%% "
 interval = 0.5
 format-background = ${colors.foreground}	
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
+format-prefix-background = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/memory]
 type = internal/memory
 format = <label>
-label = "   %percentage_used%%  "
+label = "  %percentage_used%% "
 interval = 3
 format-background = ${colors.primary}
 format-foreground = ${colors.foreground}
@@ -112,7 +147,7 @@ format-suffix-background = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
 type = internal/pulseaudio
-use-ui-max = true
+use-ui-max = false
 interval = 5
 format-volume = "<ramp-volume> <label-volume>  "
 format-muted = <label-muted>
@@ -124,24 +159,24 @@ format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.foreground}
 format-volume-prefix = %{T3} %{T-}
 format-volume-prefix-foreground = ${colors.background}	
-format-volume-prefix-background = ${colors.primary}	
+format-volume-prefix-background = ${colors.background}	
 format-muted-prefix = %{T3} %{T-}	
 format-muted-background = ${colors.background}	
-format-muted-foreground = ${colors.foreground}	
+format-muted-foreground = ${colors.primary}	
 format-muted-prefix-foreground = ${colors.background}	
-format-muted-prefix-background = ${colors.primary}		
+format-muted-prefix-background = ${colors.background}		
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 format = <label>
-label = "    %percentage%%"
+label = "  %percentage%% "
 format-background = ${colors.primary}
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.primary}	
-format-prefix-background = ${colors.background}	
+format-prefix-background = ${colors.foreground}	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/wireless-network]
 type = internal/network
