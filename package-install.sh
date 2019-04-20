@@ -5,7 +5,7 @@
 sudo apt update && upgrade
 
 # packages i use
-PACK="gnome-tweak-tool libsox-fmt-mp3 sox vlc cheese gnome-terminal net-tools xinput alsa-utils mupdf ffmpeg htop i3lock scrot imagemagick x11-session-utils nautilus ubuntu-drivers-common neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
+PACK="feh gnome-tweak-tool libsox-fmt-mp3 sox vlc cheese gnome-terminal net-tools xinput alsa-utils mupdf ffmpeg htop i3lock scrot imagemagick x11-session-utils nautilus ubuntu-drivers-common neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
 LAPPACK="system76-driver"
 DESKPACK="system76-driver-nvidia"
 
