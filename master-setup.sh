@@ -5,7 +5,10 @@
 #git clone https://github.com/deionizedoatmeal/setup.git
 
 # install packages
-./setup/package-install.sh
+./package-install.sh
+
+# remove packages
+./package-uninstall.sh
 
 # install airblader's i3gaps
 #./setup/i3gaps-install.sh
@@ -19,13 +22,13 @@
 #cp /setup/polybar/launch.sh ~/.config/polybar/launch.sh
 #cp /setup/rofi/config ~/.config/rofi/config
 #cp /setup/zarthura/zathurarc ~/.config/zathura/zathurarc
-echo 'congifs set up'
+$echo 'congifs set up'
 
 # move system scripts into bin
 #sudo cp -p /setup/lock.sh /bin/lock
 #sudo cp -p /setup/btheadphones_connect.sh /bin/btheadphones_connect
 #sudo cp -p /setup/btheadphones_disconnect.sh /bin/btheadphones_disconnect
-echo 'scripts set up'
+$echo 'scripts set up'
 
 echo 'master set up complete'
 
