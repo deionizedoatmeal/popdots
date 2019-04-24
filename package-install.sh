@@ -23,6 +23,9 @@ then
     sudo apt install -y $DESKPACK
 fi
 
+# install gnome vitals extension
+mkdir -p ~/.local/share/gnome-shell/extensions
+git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
 
 # install python packages
 pip3 install pywal
