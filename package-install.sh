@@ -6,8 +6,10 @@ sudo apt update && upgrade
 
 # packages i use
 PACK="system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc mupdf ffmpeg htop i3lock scrot nautilus neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
-LAPPACK="awesome"
+LAPPACK=""
 DESKPACK="system76-driver-nvidia"
+
+#smartmontools?
 
 # install apt packages
 sudo apt install -y $PACK
