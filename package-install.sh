@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # add PPAs
+sudo add-apt-repository -u ppa:snwh/ppa
 
 sudo apt update && upgrade
 
 # packages i use
-PACK="system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc mupdf ffmpeg htop i3lock scrot nautilus neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake rofi google-chrome-stable python-pip python3-pip gcc powertop"
+PACK="paper-icon-theme system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake google-chrome-stable python-pip python3-pip gcc powertop"
 LAPPACK=""
 DESKPACK="system76-driver-nvidia"
 
-#smartmontools?
 
 # install apt packages
 sudo apt install -y $PACK
@@ -33,8 +33,8 @@ git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/ex
 pip3 install pywal
 
 # install fonts
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-./install.sh
+#git clone https://github.com/ryanoasis/nerd-fonts.git
+#cd nerd-fonts
+#./install.sh
 
 echo 'package install complete'
