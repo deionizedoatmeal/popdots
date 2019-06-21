@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # canibalized from @petvas i3lock-blur https://github.com/petvas/i3lock-blur.git
 # drop this bad boy in your bin, and the lock icon in the i3 config directory, then just call 'exec lock' in your i3 config file, or just use lock as a command
 

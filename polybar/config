@@ -8,9 +8,9 @@ alert = ${xrdb:color4:#222}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/main]
 width = 3140
-height = 64
+height = 54
 offset-x = 30
-offset-y = 24
+offset-y = 20
 bottom = false
 fixed-center = true
 line-size = 2
@@ -23,13 +23,13 @@ override-redirect = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = Comfortaa:pixelsize=28;4
+font-0 = Comfortaa:pixelsize=20;4
 font-1 = UbuntuMono Nerd Font:size=24;4
-font-2 = UbuntuMono Nerd Font:size=40;8
+font-2 = UbuntuMono Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio temperature backlight cpu memory battery
+modules-right = pulseaudio backlight cpu memory temperature battery
 
 tray-position = right
 tray-padding = 2
@@ -129,7 +129,7 @@ format-full-suffix-background = ${colors.background}
 type = internal/cpu
 format = <label>
 label = "  %percentage%% "
-interval = 0.5
+interval = 2
 format-background = ${colors.foreground}	
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
@@ -143,7 +143,7 @@ label = "  %percentage_used%% "
 
 interval = 3
 format-background = ${colors.primary}
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.primary}	
 format-prefix-background = ${colors.foreground}	
@@ -168,7 +168,7 @@ format-volume-prefix-foreground = ${colors.background}
 format-volume-prefix-background = ${colors.background}	
 format-muted-prefix = %{T3} %{T-}	
 format-muted-background = ${colors.background}	
-format-muted-foreground = ${colors.primary}	
+format-muted-foreground = ${colors.foreground}	
 format-muted-prefix-foreground = ${colors.background}	
 format-muted-prefix-background = ${colors.background}		
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

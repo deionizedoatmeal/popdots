@@ -19,23 +19,24 @@ trans = #00000000
 white = #FFFFFF
 black = #000000
 
-bg = #1F1F1F
-fg = #FFFFFF
-fg-alt = #A9ABB0
+bg = #164058
+fg = #164058
+fg-alt = #7A847B
 
 acolor = #FFFFFF
 curgent = #EF5350
 coccupied = #42A5F5
 
-shade1 = #BF360C
-shade2 = #D84315
-shade3 = #E64A19
-shade4 = #F4511E
-shade5 = #FF5722
-shade6 = #FF7043
-shade7 = #FF8A65
-shade8 = #FFAB91
+shade1 = #FDA698
+shade2 = #CD8F84
+shade3 = #FDA698
+shade4 = #CD8F84
+shade5 = #FDA698
+shade6 = #CD8F84
+shade7 = #FDA698
+shade8 = #CD8F84
 ashade8 = #2C2C2C
+
 
 ## Material Colors
 
@@ -62,21 +63,25 @@ blue-gray = #546e7a
 ;==========================================================
 
 [bar/main]
-width = 96%
-height = 32
-offset-x = 2%
-offset-y = 2%
+width = 3140
+height = 64
+offset-x = 30
+offset-y = 24
 bottom = false
 fixed-center = false
 line-size = 2
+
+# Don't set wm-restack and don't override-redirect
+wm-restack = 
+override-redirect = true
 
 background = ${color.bg}
 foreground = ${color.fg}
 
 ;==========================================================
 
-font-0 = "Fantasque Sans Mono:pixelsize=10;3"
-font-1 = "Iosevka Nerd Font:pixelsize=13;3"
+font-0 = "Fantasque Sans Mono:pixelsize=20;3"
+font-1 = "Iosevka Nerd Font:pixelsize=26;3"
 
 ;==========================================================
 
@@ -89,7 +94,7 @@ scroll-down = i3wm-wsprev
 ;== Module Location ========================================================
 
 modules-left = arch workspaces google github reddit facebook youtube
-modules-right = mpd pkg volume battery network date powermenu
+modules-right = pkg volume battery network date powermenu
  
 ;== Modules ========================================================
 
@@ -182,8 +187,8 @@ type = internal/mpd
 format-online = <toggle> <label-song> 
 ;format-online =  <label-song> 
 ;alt icons =   
-format-online-foreground = ${color.ashade8}
 format-online-background = ${color.shade8}
+format-online-foreground = ${color.ashade8}
 format-online-padding = 2
 
 icon-play = 喇
@@ -290,4 +295,3 @@ click-left = pmenu_1
 click-right = pmenu_1
 
 ;== EOF ========================================================
-

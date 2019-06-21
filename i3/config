@@ -38,19 +38,18 @@ client.background       $bg
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal 
 
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show
-
+bindsym $mod+d exec rofi -show run
 
 # change focus by using the cursor keys:
 bindsym $mod+Left focus left
@@ -134,6 +133,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+
 ####################
 # SESSION CONTROLS #
 ####################
@@ -142,7 +142,6 @@ mode  $session {
          bindsym e exec $psst i3-msg exit; mode "default"
          bindsym p exec $psst systemctl poweroff; mode "default"
          bindsym r exec $psst systemctl reboot; mode "default"
-
          bindsym q mode "default"
          bindsym Escape mode "default"
 }
@@ -156,13 +155,11 @@ bindsym $mod+Shift+e mode $session
 
 set $powerctrl "Set Power Mode: (1) Battery   (2) Balenced   (3) Performance"
 mode $powerctrl {
-	bindsym 1 exec "system76-power profile battery"
-	bindsym 2 exec "system76-power profile balanced"
-	bindsym 3 exec "system76-power profile performance"
-	
+	bindsym 1 exec "system76-power profile battery"; mode "default" 
+	bindsym 2 exec "system76-power profile balanced"; mode "default"
+	bindsym 3 exec "system76-power profile performance"; mode "default"
 	bindsym q mode "default"
 	bindsym Escape mode "default"
-
 }
 
 bindsym $mod+Shift+p mode $powerctrl
@@ -194,11 +191,11 @@ bindsym $mod+r mode "resize"
 # POLYBAR #
 ###########
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id nm-applet
+#exec_always --no-startup-id nm-applet
 
 
 # start compton
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 
 ###########
 # BORDERS #
@@ -208,7 +205,8 @@ for_window [class="^.*"] border pixel 4
 ########
 # GAPS #
 ########
-gaps inner 30
+gaps top 25
+gaps inner 25
 
 # don't follow mouse focus
 focus_follows_mouse no
@@ -216,9 +214,10 @@ focus_follows_mouse no
 ##############
 # OTHER BINDS #
 ##############
-bindsym --release Print exec play ~/.config/i3/Click_Soft_00.mp3 && exec "scrot"
-bindsym $mod+plus exec play ~/.config/i3/Click_Soft_00.mp3 && exec "btheadphones_connect"
-bindsym $mod+minus exec play ~/.config/i3/Click_Soft_00.mp3 && exec "btheadphones_disconnect"
+#bindsym $mod+p exec --no-startup-id togglepolybar
+bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id click1
+#bindsym $mod+plus exec "btheadphones_connect"
+#bindsym $mod+minus exec "btheadphones_disconnect"
 
 
 #########
@@ -231,35 +230,29 @@ for_window [class="feh"] floating enable
 ########
 # LOCK #
 ########
-bindsym $mod+BackSpace exec mpg123 ~/.config/i3/Click_Soft_01.mp3 && exec "lock"
-
+bindsym $mod+BackSpace exec --no-startup-id click1; exec --no-startup-id lock
+bindsym $mod+Escape exec --no-startup-id click1; exec --no-startup-id lock 
 
 ###################
 # SCREEN TIME OUT #
 ###################
-exec_always xset dpms 200
+exec_always --no-startup-id xset dpms 200
 
 #########
 # AUDIO #
 #########
-bindsym XF86AudioPlay exec playerctl play-pause
-
-bindsym XF86AudioRaiseVolume exec "volup" #increase sound volume
-
-bindsym XF86AudioLowerVolume exec "voldown" #decrease sound volume
-
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle #mute sound
-
+bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
+bindsym XF86AudioRaiseVolume exec --no-startup-id volup; exec --no-startup-id click1 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id voldown; exec --no-startup-id click1 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
 #############
 # BACKLIGHT #
 #############
-bindsym XF86MonBrightnessUp exec "light -A 5"
+bindsym XF86MonBrightnessUp exec --no-startup-id lightup; exec --no-startup-id click0
+bindsym XF86MonBrightnessDown exec --no-startup-id lightdown; exec --no-startup-id click0
 
-bindsym XF86MonBrightnessDown exec "light -U 5"
-
-#bindsym XF86TouchpadToggle exec ~/scripts/toggletouchpad.sh && exec play ~/.config/i3/Click_Soft_00.mp3
-
+#bindsym XF86TouchpadToggle exec ~/scripts/toggletouchpad.sh && exec --no-startup-id click0
 
 #############
 # FLOAT MAX #
