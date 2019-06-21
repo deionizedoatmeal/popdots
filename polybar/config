@@ -76,11 +76,15 @@ warn-temperature = 60
 units = true
 
 label = %temperature-c%
-format-background = ${colors.foreground}
+
+format-background = ${colors.primary}
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.background}
+format-prefix-foreground = ${colors.primary}
 format-prefix-background = ${colors.foreground}
+format-suffix = %{T3}%{T-}
+format-suffix-foreground = ${colors.background}
+format-suffix-background = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
