@@ -75,16 +75,10 @@ warn-temperature = 60
 
 units = true
 
-label = %temperature-c%
+label = "%temperature-c% " 
 
-format-background = ${colors.primary}
+format-background = ${colors.foreground}
 format-foreground = ${colors.background}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.primary}
-format-prefix-background = ${colors.foreground}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background}
-format-suffix-background = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
@@ -105,7 +99,7 @@ format-charging-background = ${colors.background}
 format-charging-foreground = ${colors.foreground}
 format-charging-prefix = %{T3}%{T-}
 format-charging-prefix-foreground = ${colors.background}
-format-charging-prefix-background = ${colors.background}
+format-charging-prefix-background = ${colors.foreground}
 format-charging-suffix = %{T3}%{T-}
 format-charging-suffix-foreground = ${colors.background}
 format-charging-suffix-background = ${colors.background}
@@ -115,7 +109,7 @@ format-discharging-background = ${colors.background}
 format-discharging-foreground = ${colors.foreground}
 format-discharging-prefix = %{T3}%{T-}
 format-discharging-prefix-foreground = ${colors.background}
-format-discharging-prefix-background = ${colors.background}
+format-discharging-prefix-background = ${colors.foreground}
 format-discharging-suffix = %{T3}%{T-}
 format-discharging-suffix-foreground = ${colors.background}
 format-discharging-suffix-background = ${colors.background}
@@ -124,10 +118,10 @@ format-full-background = ${colors.background}
 format-full-foreground = ${colors.foreground}
 format-full-prefix = %{T3}%{T-}
 format-full-prefix-foreground = ${colors.background}
-format-full-prefix-background = ${colors.background}
+format-full-prefix-background = ${colors.foreground}
 format-full-suffix = %{T3}%{T-}
 format-full-suffix-foreground = ${colors.background}
-format-full-suffix-background = ${colors.background}
+format-full-suffix-background = ${colors.foreground}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/cpu]
 type = internal/cpu
@@ -152,7 +146,7 @@ format-prefix = %{T3}%{T-}
 format-prefix-foreground = ${colors.primary}
 format-prefix-background = ${colors.foreground}
 format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.background}
+format-suffix-foreground = ${colors.foreground}
 format-suffix-background = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
