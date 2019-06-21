@@ -18,7 +18,7 @@ sudo apt install -y $PACK
 read -r -p "Would you like to install packages for (L)aptop, or (D)esktop? [L/D/n] " response
 if [[ "$response" =~ ^([Ll])+$ ]]
 then
-    sudo apt install -y $LAPPACK 
+    sudo apt install -y $LAPPACK
 fi
 if [[ "$response" =~ ^([Dd])+$ ]]
 then
@@ -26,15 +26,15 @@ then
 fi
 
 # install gnome vitals extension
-mkdir -p ~/.local/share/gnome-shell/extensions
-git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+#mkdir -p ~/.local/share/gnome-shell/extensions
+#git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
 
 # install python packages
 pip3 install pywal
 
-# install fonts
-#git clone https://github.com/ryanoasis/nerd-fonts.git
-#cd nerd-fonts
-#./install.sh
+# install fonts WARNING LARGE
+git clone https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install.sh
 
 echo 'package install complete'
