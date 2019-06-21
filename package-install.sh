@@ -6,7 +6,7 @@ sudo add-apt-repository -u ppa:snwh/ppa
 sudo apt update && upgrade
 
 # packages i use
-PACK="sox pinta fonts-fantasque-sans rofi mpg123 darktable paper-icon-theme system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake google-chrome-stable python-pip python3-pip gcc powertop"
+PACK="pinta fonts-fantasque-sans rofi mpg123 darktable paper-icon-theme system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake google-chrome-stable python-pip python3-pip gcc powertop"
 LAPPACK=""
 DESKPACK="system76-driver-nvidia"
 
