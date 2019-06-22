@@ -10,7 +10,7 @@ font pango:monospace 16
 # WAL COLORS #
 ##############
 # Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
@@ -43,7 +43,7 @@ client.background       $bg
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal 
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -155,7 +155,7 @@ bindsym $mod+Shift+e mode $session
 
 set $powerctrl "Set Power Mode: (1) Battery   (2) Balenced   (3) Performance"
 mode $powerctrl {
-	bindsym 1 exec "system76-power profile battery"; mode "default" 
+	bindsym 1 exec "system76-power profile battery"; mode "default"
 	bindsym 2 exec "system76-power profile balanced"; mode "default"
 	bindsym 3 exec "system76-power profile performance"; mode "default"
 	bindsym q mode "default"
@@ -194,8 +194,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id nm-applet
 
 
-# start compton
+# start compton and flashfocus
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
+exec_always --no-startup-id flashfocus
 
 ###########
 # BORDERS #
@@ -231,7 +232,7 @@ for_window [class="feh"] floating enable
 # LOCK #
 ########
 bindsym $mod+BackSpace exec --no-startup-id click1; exec --no-startup-id lock
-bindsym $mod+Escape exec --no-startup-id click1; exec --no-startup-id lock 
+bindsym $mod+Escape exec --no-startup-id click1; exec --no-startup-id lock
 
 ###################
 # SCREEN TIME OUT #
@@ -258,4 +259,3 @@ bindsym XF86MonBrightnessDown exec --no-startup-id lightdown; exec --no-startup-
 # FLOAT MAX #
 #############
 floating_maximum_size 3000 x 1600
-
