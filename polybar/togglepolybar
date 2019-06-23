@@ -1,9 +1,0 @@
-#!/bin/bash
-if [$POLYBARON -eq 1]
-then
-	killall -q polybar
-	POLYBARON = 0
-else
-	launchpolybar
-	POLYBARON = 1
-fi

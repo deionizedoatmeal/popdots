@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # add PPAs
 sudo add-apt-repository -u ppa:snwh/ppa
