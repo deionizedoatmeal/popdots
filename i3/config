@@ -193,6 +193,8 @@ bindsym $mod+r mode "Resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec_always --no-startup-id nm-applet
 
+bindsym $mod+p exec --no-startup-id ~/.config/polybar/launch.sh
+bindsym $mod+o exec --no-startup-id killall -q polybar
 
 # start compton and flashfocus
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf

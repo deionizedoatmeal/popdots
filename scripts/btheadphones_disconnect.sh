@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 coproc bluetoothctl
 echo -e 'disconnect' >&${COPROC[1]}
