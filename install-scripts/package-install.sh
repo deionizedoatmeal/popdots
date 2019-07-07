@@ -48,7 +48,7 @@ echo 'backlight utility installed'
 
 
 # install python packages
-pip3 install pywal
+sudo pip3 install pywal
 pip install flashfocus
 echo 'python packages installed'
 
