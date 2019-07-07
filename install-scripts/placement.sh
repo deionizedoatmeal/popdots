@@ -7,8 +7,14 @@ cd "${0%/*}"
 cd ../scripts
 for f in *.sh; do
 NAME=${f::-3}
-cp $f ~/$NAME
+sudo cp $f /bin/$NAME
 done
+
+mkdir ~/.config/i3/
+mkdir ~/.config/polybar/
+mkdir ~/.config/rofi/
+mkdir ~/.config/compton/
+mkdir ~/.config/zathura/
 
 #move dotfiles into corresponding config directories
 cd ..
