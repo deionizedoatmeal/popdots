@@ -7,7 +7,7 @@ sudo apt update
 sudo apt upgrade
 
 # packages i use
-SYS="libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans paper-icon-theme rofi mpg123 system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger cmake python-pip python3-pip gcc powertop"
+SYS="compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans paper-icon-theme rofi mpg123 system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger cmake python-pip python3-pip gcc powertop"
 APPS="darktable pinta neofetch steam atom blender gimp spotify-client google-chrome-stable" 
 LAPTOP=""
 DESKTOP="system76-driver-nvidia"
@@ -49,7 +49,7 @@ echo 'backlight utility installed'
 
 # install python packages
 sudo pip3 install pywal
-pip install flashfocus
+sudo pip install flashfocus
 echo 'python packages installed'
 
 
