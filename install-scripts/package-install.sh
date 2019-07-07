@@ -3,39 +3,63 @@
 # add PPAs
 sudo add-apt-repository -u ppa:snwh/ppa
 
-sudo apt update && upgrade
+sudo apt update
+sudo apt upgrade
 
 # packages i use
-PACK="libxcb-render0-dev libffi-dev python-dev python-cffi pinta fonts-fantasque-sans rofi mpg123 darktable paper-icon-theme system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger neofetch steam atom blender gimp spotify-client gir1.2-gtop-2.0 lm-sensors cmake google-chrome-stable python-pip python3-pip gcc powertop"
-LAPPACK=""
-DESKPACK="system76-driver-nvidia"
+SYS="libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans paper-icon-theme rofi mpg123 system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger cmake python-pip python3-pip gcc powertop"
+APPS="darktable pinta neofetch steam atom blender gimp spotify-client google-chrome-stable" 
+LAPTOP=""
+DESKTOP="system76-driver-nvidia"
 
 
 # install apt packages
-sudo apt install -y $PACK
+sudo apt install -y $SYS
 
-# desktop or laptop packages
-read -r -p "Would you like to install packages for (L)aptop, or (D)esktop? [L/D/n] " response
-if [[ "$response" =~ ^([Ll])+$ ]]
+# which packages
+read -r -p "Would you like to install applications (optional)? [y/N]" response
+if [[ "$response" =~ ^([Yy])+$ ]]
 then
-    sudo apt install -y $LAPPACK
-fi
-if [[ "$response" =~ ^([Dd])+$ ]]
-then
-    sudo apt install -y $DESKPACK
+    sudo apt install -y $APPS
 fi
 
-# install gnome vitals extension
-#mkdir -p ~/.local/share/gnome-shell/extensions
-#git clone https://github.com/corecoding/Vitals.git ~/.local/share/gnome-shell/extensions/Vitals@CoreCoding.com
+read -r -p "Would you like to install laptop software (optional)? [y/N]" response
+if [[ "$response" =~ ^([Yy])+$ ]]
+then
+    sudo apt install -y $LAPTOP
+fi
+
+read -r -p "Would you like to install desktop software (optional)? [y/N]" response
+if [[ "$response" =~ ^([Yy])+$ ]]
+then
+    sudo apt install -y $DESKTOP
+fi
+echo 'apt packages installed'
+
+# install light utility
+git clone https://github.com/haikarainen/light.git
+cd light
+./autogen.sh
+./configure && make
+sudo make install
+cd ..
+sudo rm -r light
+echo 'backlight utility installed'
+
 
 # install python packages
 pip3 install pywal
 pip install flashfocus
+echo 'python packages installed'
+
 
 # install fonts WARNING LARGE
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-./install.sh
-
+read -r -p "Would you like to install fonts (WARNING LARGE)? [y/N]" response
+if [[ "$response" =~ ^([Yy])+$ ]]
+then
+    git clone https://github.com/ryanoasis/nerd-fonts.git
+    cd nerd-fonts
+    ./install.sh
+fi
+echo 'fonts installed'
 echo 'package install complete'
