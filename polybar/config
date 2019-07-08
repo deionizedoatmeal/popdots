@@ -71,7 +71,7 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 
 ; Threshold temperature to display warning label (in degrees celsius)
 ; Default: 80
-warn-temperature = 60
+warn-temperature = 80
 
 units = true
 
