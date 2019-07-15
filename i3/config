@@ -226,7 +226,6 @@ bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id cl
 #########
 # STEAM #
 #########
-for_window [class=""] fullscreen enable
 for_window [class="Darktable"] fullscreen enable
 for_window [class="Gimp"] fullscreen enable
 for_window [class="Steam"] floating enable
