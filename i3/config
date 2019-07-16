@@ -223,13 +223,11 @@ bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id cl
 #bindsym $mod+minus exec "btheadphones_disconnect"
 
 
-#########
-# STEAM #
-#########
-for_window [class="Darktable"] fullscreen enable
-for_window [class="Gimp"] fullscreen enable
+####################
+# FLOATING WINDOWS #
+####################
 for_window [class="Steam"] floating enable
-#for_window [class="Nautilus"] floating enable
+for_window [class="Nautilus"] floating enable
 for_window [class="feh"] floating enable
 
 
