@@ -1,0 +1,89 @@
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root:not([customizing]) #nav-bar toolbarbutton
+ {
+    margin-left: -28px !important;
+    opacity: 0 !important;
+    transform: scale(.85, .85) !important;
+    pointer-events: none !important;
+    transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+    transform: scale(1, 1) !important;
+opacity:1 !important;
+margin-left:0 !important;
+pointer-events: auto !important;
+}
+
+#nav-bar {
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* #nav-bar:hover, */
+#nav-bar:focus-within {
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+}
+
+#navigator-toolbox::after {
+	border-bottom: 0px !important;
+}
+
+/* don't show the blue border around the url bar when focused */
+#urlbar, .searchbar-textbox {
+  font-size: 12pt !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* hide the one pixel top border for tabs */
+.tab-background {
+       border-top: none !important;
+}
+
+/* no blue line on top of the focused tab */
+#tabbrowser-tabs {
+       --tab-line-color: -moz-win-accentcolor !important;
+       --tab-loading-fill: -moz-win-accentcolor !important;
+box-shadow: none !important;
+}
+
+
+/* hide tabs entirely if there's only one */
+/*
+#tabbrowser-tabs, #tabbrowser-tabs arrowscrollbox { min-height: 0 !important; }
+#tabbrowser-tabs tab { height: var(--tab-min-height); }
+#tabbrowser-tabs tab:first-child:last-child { display: none !important; }
+*/
+
+/* hide tab bar if only one tab */
+tab:only-of-type { 
+    display:none; 
+}
+
+/* unset the tab bar min-height */ 
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
+    min-height: initial !important;
+}
+
+/* set the height on the tabs instead */
+tab { 
+    line-height: 32px; height: 32px; 
+}
+
+/* hide new tab button so tab-bar can collapse */
+.tabs-newtab-button { 
+    display: none; 
+}
+
+/* ...but show it on tab-bar hover */
+#tabbrowser-tabs:hover .tabs-newtab-button { 
+    display: block; 
+}

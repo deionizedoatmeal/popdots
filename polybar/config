@@ -29,7 +29,7 @@ font-2 = UbuntuMono Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio backlight cpu memory temperature battery
+modules-right = pulseaudio backlight cpu system-cpu-frequency memory temperature battery wireless-network
 
 tray-position = right
 tray-padding = 2
@@ -83,15 +83,15 @@ format-foreground = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]
 type = internal/battery
-format-charging = <animation-charging>  <label-charging>
-format-full = <label-full>
+format-charging = <animation-charging>   <label-charging>
+format-full = <label-full> 
 label-charging = "%percentage%% Charged "
 label-full = " Fully charged "
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
 format-discharging = " <label-discharging>"
 label-discharging = "%percentage%%"
 
@@ -127,7 +127,7 @@ format-full-suffix-background = ${colors.foreground}
 type = internal/cpu
 format = <label>
 label = "  %percentage%% "
-interval = 2
+interval = 5
 format-background = ${colors.foreground}
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
@@ -139,7 +139,7 @@ type = internal/memory
 format = <label>
 label = "  %percentage_used%% "
 
-interval = 3
+interval = 5
 format-background = ${colors.primary}
 format-foreground = ${colors.background}
 format-prefix = %{T3}%{T-}
@@ -148,6 +148,13 @@ format-prefix-background = ${colors.foreground}
 format-suffix = %{T3}%{T-}
 format-suffix-foreground = ${colors.foreground}
 format-suffix-background = ${colors.primary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/system-cpu-frequency]
+type = custom/script
+exec = system-cpu-frequency
+interval = 5
+format-background = ${colors.foreground}    
+format-foreground = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
 type = internal/pulseaudio

@@ -7,7 +7,7 @@ cd "${0%/*}"
 cd ../scripts
 for f in *.sh; do
 NAME=${f::-3}
-sudo cp $f /bin/$NAME
+sudo cp -p $f /bin/$NAME
 done
 
 mkdir ~/.config/i3/
@@ -25,3 +25,5 @@ cp -r compton/* ~/.config/compton/
 cp -r zathura/* ~/.config/zathura/
 cp .bashrc ~/
 cp .Xresources ~/
+
+echo 'remember to manually set up the userChrome.css config for firefox' 

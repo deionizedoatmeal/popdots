@@ -9,3 +9,6 @@ git clone https://github.com/jaagr/polybar.git polybarrepo
 cd polybarrepo && ./build.sh
 
 echo 'polybar-install.sh has completed'
+
+cd ..
+sudo rm -r polybarrepo

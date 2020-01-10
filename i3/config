@@ -1,6 +1,6 @@
 # see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -14,12 +14,12 @@ font pango:monospace 16
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $fg i3wm.color6 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 set_from_resource $gg i3wm.color4 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $fg     $gg     $bg  $fg       $gg
+client.focused          $fg     $fg     $bg  $fg       $fg
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
@@ -191,14 +191,16 @@ bindsym $mod+r mode "Resize"
 # POLYBAR #
 ###########
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec_always --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 
 bindsym $mod+p exec --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+o exec --no-startup-id killall -q polybar
 
-# start compton and flashfocus
+# start compton, flashfocus and get gtk theme
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id flashfocus
+#exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+#exec --no-startup-id gnome-flashback
 
 ###########
 # BORDERS #
@@ -208,8 +210,17 @@ for_window [class="^.*"] border pixel 4
 ########
 # GAPS #
 ########
+
 gaps top 25
 gaps inner 25
+
+#bindsym $mod+o exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
+#    '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
+#        i3-msg gaps inner current set 0; \
+#    else \
+#        i3-msg gaps inner current set $gap_width; \
+#    fi"
+
 
 # don't follow mouse focus
 focus_follows_mouse no

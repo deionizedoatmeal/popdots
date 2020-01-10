@@ -7,8 +7,8 @@ sudo apt update
 sudo apt upgrade
 
 # packages i use
-SYS="exfat-utils lm-sensors compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans paper-icon-theme rofi mpg123 system76-driver pass imagemagick zathura feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw ranger cmake python-pip python3-pip gcc powertop"
-APPS="darktable pinta neofetch steam atom blender gimp spotify-client google-chrome-stable" 
+SYS="exfat-utils golang-go lm-sensors compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans paper-icon-theme rofi mpg123 system76-driver pass imagemagick feh gnome-tweak-tool vlc htop neovim python-neovim python3-neovim tlp tlp-rdw cmake python-pip python3-pip gcc powertop"
+APPS="darktable pinta neofetch steam atom blender gimp spotify-client zathura ranger" 
 LAPTOP=""
 DESKTOP="system76-driver-nvidia"
 
@@ -52,6 +52,10 @@ echo 'backlight utility installed'
 sudo pip3 install pywal
 sudo pip install flashfocus
 echo 'python packages installed'
+
+# install go top
+go get github.com/cjbassi/gotop
+sudo mv ~/go/bin/gotop /bin/.
 
 
 # install fonts WARNING LARGE

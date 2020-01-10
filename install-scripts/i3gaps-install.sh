@@ -20,3 +20,5 @@ make
 sudo make install
 
 echo 'i3gaps-install.sh has completed'
+cd ..
+rm -r i3-gaps
