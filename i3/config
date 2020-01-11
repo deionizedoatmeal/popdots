@@ -137,32 +137,34 @@ bindsym $mod+Shift+r restart
 ####################
 # SESSION CONTROLS #
 ####################
-set $session " (E)xit     (P)oweroff     (R)eboot"
-mode  $session {
-         bindsym e exec $psst i3-msg exit; mode "default"
-         bindsym p exec $psst systemctl poweroff; mode "default"
-         bindsym r exec $psst systemctl reboot; mode "default"
-         bindsym q mode "default"
-         bindsym Escape mode "default"
-}
+#set $session " (E)xit     (P)oweroff     (R)eboot"
+#mode  $session {
+#         bindsym e exec $psst i3-msg exit; mode "default"
+#         bindsym p exec $psst systemctl poweroff; mode "default"
+#         bindsym r exec $psst systemctl reboot; mode "default"
+#         bindsym q mode "default"
+#         bindsym Escape mode "default"
+#}
 
-bindsym $mod+Shift+e mode $session
+bindsym $mod+Shift+e exec rofimenu-exit
+
+bindsym $mod+Shift+p exec rofimenu-power
 
 
 ##################
 #BATTERY SETTINGS#
 ##################
 
-set $powerctrl "Set Power Mode: (1) Battery   (2) Balenced   (3) Performance"
-mode $powerctrl {
-	bindsym 1 exec "system76-power profile battery"; mode "default"
-	bindsym 2 exec "system76-power profile balanced"; mode "default"
-	bindsym 3 exec "system76-power profile performance"; mode "default"
-	bindsym q mode "default"
-	bindsym Escape mode "default"
-}
+#set $powerctrl "Set Power Mode: (1) Battery   (2) Balenced   (3) Performance"
+#mode $powerctrl {
+#	bindsym 1 exec "system76-power profile battery"; mode "default"
+#	bindsym 2 exec "system76-power profile balanced"; mode "default"
+#	bindsym 3 exec "system76-power profile performance"; mode "default"
+#	bindsym q mode "default"
+#	bindsym Escape mode "default"
+#}
 
-bindsym $mod+Shift+p mode $powerctrl
+#bindsym $mod+Shift+p mode $powerctrl
 
 
 
@@ -205,12 +207,12 @@ exec_always --no-startup-id flashfocus
 ###########
 # BORDERS #
 ###########
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 0
 
 ########
 # GAPS #
 ########
-
+border_radius 8
 gaps top 25
 gaps inner 25
 
