@@ -4,7 +4,7 @@ foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color5:#222}
 primary = ${xrdb:color2:#222}
 secondary = ${xrdb:color3:#222}
-alert = ${xrdb:color4:#222}
+alert = ${xrdb:color7:#222}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/main]
 width = 3140
@@ -14,6 +14,13 @@ offset-y = 20
 bottom = false
 fixed-center = true
 line-size = 2
+padding-right = 5
+tray-detached = true
+tray-maxsize = 48
+tray-offset-x = -30 
+radius = 30.0
+tray-position = right
+tray-padding = 2
 
 # Don't set wm-restack and don't override-redirect
 wm-restack =
@@ -23,31 +30,60 @@ override-redirect = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = Comfortaa:pixelsize=20;4
-font-1 = UbuntuMono Nerd Font:size=24;4
-font-2 = UbuntuMono Nerd Font:size=41;8
+font-0 = Iosevka Nerd Font:pixelsize=24;4
+font-1 = Iosevka Nerd Font:size=24;4
+font-2 = Iosevka Nerd Font:size=41;8
 
-modules-left = i3
+modules-left = workspaces
 modules-center = date
-modules-right = pulseaudio backlight cpu system-cpu-frequency memory temperature battery wireless-network
-
-tray-position = right
-tray-padding = 2
-tray-maxsize = 48
+modules-right = pulseaudio backlight cpu temperature system-cpu-frequency memory battery
 
 
 module-margin = 0
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; #### MODULES ####
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/windowtitle]
-type = internal/xwindow
-format = <label>
-label = %title%
-format-foreground = #f5f5f5
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = true
+index-sort = true
+enable-click = true
+enable-scroll = true
+format-padding = 1
+
+;icon-0 = 1;❶
+;icon-1 = 2;❷
+;icon-2 = 3;❸
+;icon-3 = 4;❹
+;icon-4 = 5;❺
+;icon-5 = 6;❻
+;icon-6 = 7;❼
+;icon-7 = 8;❽
+;icon-8 = 9;❾
+;icon-9 = 10;❿
+
+icon-default = 
+ 
+format = <label-state>
+format-background = ${colors.background}
+label-active = 
+label-occupied = 
+label-urgent = 
+label-empty = 
+ 
+label-empty-padding = 1
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+ 
+label-empty-foreground = ${colors.primary}
+label-active-foreground = ${colors.primary}
+label-urgent-foreground = ${colors.alert}
+label-occupied-foreground = ${colors.secondary}
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/temperature]
 type = internal/temperature
@@ -75,178 +111,12 @@ warn-temperature = 80
 
 units = true
 
-label = "%temperature-c% "
+label = "|%temperature-c%|"
 
-format-background = ${colors.foreground}
-format-foreground = ${colors.background}
+format-background = ${colors.background}
+format-foreground = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/battery]
-type = internal/battery
-format-charging = <animation-charging>   <label-charging>
-format-full = <label-full> 
-label-charging = "%percentage%% Charged "
-label-full = " Fully charged "
-animation-charging-0 = "  "
-animation-charging-1 = "  "
-animation-charging-2 = "  "
-animation-charging-3 = "  "
-animation-charging-4 = "  "
-format-discharging = " <label-discharging>"
-label-discharging = "%percentage%%"
-
-format-charging-background = ${colors.background}
-format-charging-foreground = ${colors.foreground}
-format-charging-prefix = %{T3}%{T-}
-format-charging-prefix-foreground = ${colors.background}
-format-charging-prefix-background = ${colors.foreground}
-format-charging-suffix = %{T3}%{T-}
-format-charging-suffix-foreground = ${colors.background}
-format-charging-suffix-background = ${colors.background}
-
-
-format-discharging-background = ${colors.background}
-format-discharging-foreground = ${colors.foreground}
-format-discharging-prefix = %{T3}%{T-}
-format-discharging-prefix-foreground = ${colors.background}
-format-discharging-prefix-background = ${colors.foreground}
-format-discharging-suffix = %{T3}%{T-}
-format-discharging-suffix-foreground = ${colors.background}
-format-discharging-suffix-background = ${colors.background}
-
-format-full-background = ${colors.background}
-format-full-foreground = ${colors.foreground}
-format-full-prefix = %{T3}%{T-}
-format-full-prefix-foreground = ${colors.background}
-format-full-prefix-background = ${colors.foreground}
-format-full-suffix = %{T3}%{T-}
-format-full-suffix-foreground = ${colors.background}
-format-full-suffix-background = ${colors.foreground}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/cpu]
-type = internal/cpu
-format = <label>
-label = "  %percentage%% "
-interval = 5
-format-background = ${colors.foreground}
-format-foreground = ${colors.background}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.primary}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/memory]
-type = internal/memory
-format = <label>
-label = "  %percentage_used%% "
-
-interval = 5
-format-background = ${colors.primary}
-format-foreground = ${colors.background}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.primary}
-format-prefix-background = ${colors.foreground}
-format-suffix = %{T3}%{T-}
-format-suffix-foreground = ${colors.foreground}
-format-suffix-background = ${colors.primary}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/system-cpu-frequency]
-type = custom/script
-exec = system-cpu-frequency
-interval = 5
-format-background = ${colors.foreground}    
-format-foreground = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/pulseaudio]
-type = internal/pulseaudio
-use-ui-max = false
-interval = 5
-format-volume = "<ramp-volume> <label-volume>  "
-format-muted = <label-muted>
-label-muted = "   Muted  "
-ramp-volume-0 ="  "
-ramp-volume-1 ="   "
-ramp-volume-2 =" 墳"
-format-volume-background = ${colors.background}
-format-volume-foreground = ${colors.foreground}
-format-volume-prefix = %{T3} %{T-}
-format-volume-prefix-foreground = ${colors.background}
-format-volume-prefix-background = ${colors.background}
-format-muted-prefix = %{T3} %{T-}
-format-muted-background = ${colors.background}
-format-muted-foreground = ${colors.foreground}
-format-muted-prefix-foreground = ${colors.background}
-format-muted-prefix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-enable-scroll = true
-format = <label>
-label = "  %percentage%% "
-format-background = ${colors.primary}
-format-foreground = ${colors.background}
-format-prefix = %{T3}%{T-}
-format-prefix-foreground = ${colors.primary}
-format-prefix-background = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/wireless-network]
-type = internal/network
-format-connected =  <label-connected>
-label-connected = %essid% :  %upspeed%   %downspeed%
-interface = wlan1
-format-disconnected-suffix =%{T3}%{T-}
-format-disconnected-background = #ff5555
-format-disconnected-suffix-foreground = ${colors.background-alt}
-format-disconnected-suffix-background = #ff5555
-format-disconnected-prefix = %{T3}%{T-}
-format-disconnected-prefix-foreground = ${colors.background-alt}
-format-disconnected-prefix-background = ${colors.background-alt}
-format-connected-suffix =%{T3}%{T-}
-format-connected-background = #ff5555
-format-connected-foreground = #212121
-format-connected-suffix-foreground = #ff5555
-format-connected-suffix-background = 282a36
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #ff5555
-format-connected-prefix-background = #ff5555
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/ip]
-type = internal/network
-interface = wlo1
-format-connected =  <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = Not Connected
-label-connected = %local_ip%
-format-connected-background = #bd93f9
-format-connected-foreground = #212121
-format-connected-suffix =%{T3}%{T-}
-format-connected-suffix-foreground = #bd93f9
-format-connected-suffix-background = #ff5555
-format-connected-prefix = %{T3}%{T-}
-format-connected-prefix-foreground = #bd93f9
-format-connected-prefix-background = #bd93f9
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -286,58 +156,136 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 ; Separator in between workspaces
 ; label-separator = |
 
+ws-icon-0 = 1;❶ 
+ws-icon-1 = 2;❷
+ws-icon-2 = 3;❸
+ws-icon-3 = 4;❹
+ws-icon-4 = 5;❺
+ws-icon-5 = 6;❻
+ws-icon-6 = 7;❼
+ws-icon-7 = 8;❽
+ws-icon-8 = 9;❾
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/battery]                                                                
+type = internal/battery
+;full-at = 99
+time-format = %H:%M
+battery = BAT0
+adapter = AC
+format-charging = <animation-charging><label-charging>
+format-charging-background = ${colors.background}
+format-charging-padding = 1
+label-charging = " %percentage%%"
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-background = ${colors.background}
+format-discharging-padding = 1
+label-discharging = " %percentage%%"
+format-full = <label-full>
+label-full = " %percentage%% "
+
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ 
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1-foreground = ${colors.alert}
+ramp-capacity-foreground   = ${colors.foreground}
+;bar-capacity-width = 10
+ 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+
+animation-charging-framerate = 750
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/workspaces]
-type = internal/xworkspaces
-pin-workspaces = false
-enable-click = true
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = " %percentage%%"
+interval = 5
+format-background = ${colors.background}
+format-foreground = ${colors.primary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/memory]
+type = internal/memory
+format = <label>
+label = "  %percentage_used%%"
+
+interval = 5
+format-background = ${colors.background}
+format-foreground = ${colors.secondary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/system-cpu-frequency]
+type = custom/script
+exec = system-cpu-frequency
+interval = 5
+format-background = ${colors.background}    
+format-foreground = ${colors.primary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = false
+interval = 5
+format-volume = "<ramp-volume> <label-volume>"
+format-muted = <label-muted>
+label-muted = "   Muted"
+ramp-volume-0 ="  "
+ramp-volume-1 ="   "
+ramp-volume-2 =" 墳"
+format-volume-background = ${colors.background}
+format-volume-foreground = ${colors.primary}
+format-muted-background = ${colors.background}
+format-muted-foreground = ${colors.alert}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
 enable-scroll = true
-format-padding = 1
-
-;icon-0 = 1;❶
-;icon-1 = 2;❷
-;icon-2 = 3;❸
-;icon-3 = 4;❹
-;icon-4 = 5;❺
-;icon-5 = 6;❻
-;icon-6 = 7;❼
-;icon-7 = 8;❽
-;icon-8 = 9;❾
-;icon-9 = 10;❿
-
-icon-default = 
-
-format = <label-state>
-format-background = ${color.shade2}
-label-active = 
-label-occupied = 
-label-urgent = 
-label-empty = 
-
-label-empty-padding = 1
-label-active-padding = 1
-label-urgent-padding = 1
-label-occupied-padding = 1
-
-label-empty-foreground = ${colors.foreground}
-label-active-foreground = ${color.primary}
-label-urgent-foreground = ${color.alert}
-label-occupied-foreground = ${color.secondary}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+format = <label>
+label = "  %percentage%% "
+format-background = ${colors.background}
+format-foreground = ${colors.secondary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/wireless-network]
+type = internal/network
+format-connected =  
+interface = wlp59s0
+format-disconnected-background = ${colors.alert}
+format-connected-background = ${colors.foreground}
+format-connected-foreground = ${colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/ip]
+type = internal/network
+interface = wlo1
+format-connected =  <label-connected>
+format-disconnected = <label-disconnected>
+label-disconnected = Not Connected
+label-connected = %local_ip%
+format-connected-background = {colors.foreground}
+format-connected-foreground = {colors.background}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
 interval = 1.0
 date =  %A %b %e
 time = %l:%M %p
-format =   <label>
+format = <label>
 label = %time%, %date%
 format-foreground = #f8f8f2
 ;format-background = ${colors.background-alt}
-;format-prefix = %{T3}%{T-}
-;format-prefix-foreground = ${colors.background-alt}
-;format-prefix-b<Paste>ackground = ${colors.background}
-;format-suffix = %{T3}%{T-}
-;format-suffix-foreground = ${colors.background-alt}
-;format-suffix-background = ${colors.background}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

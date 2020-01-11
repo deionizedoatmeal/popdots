@@ -6,8 +6,8 @@ sudo apt install -y git wget curl zip unzip libxcb1-dev libxcb-keysyms1-dev libp
 cd /tmp
 
 # clone the repository
-git clone https://www.github.com/Airblader/i3 i3-gaps
-cd i3-gaps
+git clone https://github.com/resloved/i3.git
+cd i3
 
 # compile & install
 autoreconf --force --install
@@ -20,5 +20,3 @@ make
 sudo make install
 
 echo 'i3gaps-install.sh has completed'
-cd ..
-rm -r i3-gaps

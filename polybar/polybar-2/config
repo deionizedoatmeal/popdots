@@ -19,24 +19,23 @@ trans = #00000000
 white = #FFFFFF
 black = #000000
 
-bg = #164058
-fg = #164058
-fg-alt = #7A847B
+bg = #1F1F1F
+fg = #FFFFFF
+fg-alt = #A9ABB0
 
 acolor = #FFFFFF
 curgent = #EF5350
 coccupied = #42A5F5
 
-shade1 = #FDA698
-shade2 = #CD8F84
-shade3 = #FDA698
-shade4 = #CD8F84
-shade5 = #FDA698
-shade6 = #CD8F84
-shade7 = #FDA698
-shade8 = #CD8F84
+shade1 = #004D40
+shade2 = #00695C
+shade3 = #00796B
+shade4 = #00897B
+shade5 = #009688
+shade6 = #26A69A
+shade7 = #4DB6AC
+shade8 = #80CBC4
 ashade8 = #2C2C2C
-
 
 ## Material Colors
 
@@ -63,25 +62,21 @@ blue-gray = #546e7a
 ;==========================================================
 
 [bar/main]
-width = 3140
-height = 64
-offset-x = 30
-offset-y = 24
+width = 96%
+height = 32
+offset-x = 2%
+offset-y = 2%
 bottom = false
 fixed-center = false
 line-size = 2
-
-# Don't set wm-restack and don't override-redirect
-wm-restack = 
-override-redirect = true
 
 background = ${color.bg}
 foreground = ${color.fg}
 
 ;==========================================================
 
-font-0 = "Fantasque Sans Mono:pixelsize=20;3"
-font-1 = "Iosevka Nerd Font:pixelsize=26;3"
+font-0 = "Fantasque Sans Mono:pixelsize=10;3"
+font-1 = "Iosevka Nerd Font:pixelsize=13;3"
 
 ;==========================================================
 
@@ -94,7 +89,7 @@ scroll-down = i3wm-wsprev
 ;== Module Location ========================================================
 
 modules-left = arch workspaces google github reddit facebook youtube
-modules-right = pkg volume battery network date powermenu
+modules-right = mpd pkg volume battery network date powermenu
  
 ;== Modules ========================================================
 
@@ -187,8 +182,8 @@ type = internal/mpd
 format-online = <toggle> <label-song> 
 ;format-online =  <label-song> 
 ;alt icons =   
-format-online-background = ${color.shade8}
 format-online-foreground = ${color.ashade8}
+format-online-background = ${color.shade8}
 format-online-padding = 2
 
 icon-play = 喇
