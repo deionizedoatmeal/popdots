@@ -23,7 +23,7 @@ tray-position = right
 tray-padding = 2
 
 # Don't set wm-restack and don't override-redirect
-wm-restack =
+wm-restack = i3
 override-redirect = true
 
 

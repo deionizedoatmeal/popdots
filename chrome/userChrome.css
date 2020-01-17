@@ -57,11 +57,11 @@ box-shadow: none !important;
 
 
 /* hide tabs entirely if there's only one */
-/*
-#tabbrowser-tabs, #tabbrowser-tabs arrowscrollbox { min-height: 0 !important; }
-#tabbrowser-tabs tab { height: var(--tab-min-height); }
-#tabbrowser-tabs tab:first-child:last-child { display: none !important; }
-*/
+
+tabbrowser-tabs, #tabbrowser-tabs arrowscrollbox { min-height: 0 !important; }
+tabbrowser-tabs tab { height: var(--tab-min-height); }
+tabbrowser-tabs tab:first-child:last-child { display: none !important; }
+
 
 /* hide tab bar if only one tab */
 tab:only-of-type { 
