@@ -272,15 +272,16 @@ exec_always --no-startup-id xset dpms 200
 # AUDIO #
 #########
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioRaiseVolume exec --no-startup-id volup1; exec --no-startup-id click1 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id voldown1; exec --no-startup-id click1 #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up1; exec --no-startup-id click1 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id vol-down1; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
 #############
 # BACKLIGHT #
 #############
-bindsym XF86MonBrightnessUp exec --no-startup-id lightup; exec --no-startup-id click0
-bindsym XF86MonBrightnessDown exec --no-startup-id lightdown; exec --no-startup-id click0
+bindsym XF86MonBrightnessUp exec --no-startup-id light-up; exec --no-startup-id click0
+bindsym XF86MonBrightnessDown exec --no-startup-id light-down; exec --no-startup-id click0
+bindsym $mod+n exec --no-startup-id redshift-toggle
 
 #bindsym XF86TouchpadToggle exec ~/scripts/toggletouchpad.sh && exec --no-startup-id click0
 
