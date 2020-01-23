@@ -112,6 +112,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -124,9 +125,15 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# custom workspace switching
+bindsym $mod+Prior workspace next
+bindsym $mod+Next workspace prev
+bindsym $mod+Home workspace $ws1
+bindsym $mod+End workspace $ws10
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
-
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
@@ -265,8 +272,8 @@ exec_always --no-startup-id xset dpms 200
 # AUDIO #
 #########
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioRaiseVolume exec --no-startup-id volup; exec --no-startup-id click1 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id voldown; exec --no-startup-id click1 #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id volup1; exec --no-startup-id click1 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id voldown1; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
 #############
