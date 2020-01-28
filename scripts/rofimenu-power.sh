@@ -1,8 +1,8 @@
 #!/bin/bash
 
-poweroff_command="system76-power profile performance"
-reboot_command="system76-power profile balanced"
-logout_command="system76-power profile battery"
+preformance_command="system76-power profile performance"
+balanced_command="system76-power profile balanced"
+battery_command="system76-power profile battery"
 
 rofi_command="rofi"
 

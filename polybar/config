@@ -36,7 +36,7 @@ font-2 = Iosevka Nerd Font:size=41;8
 
 modules-left = workspaces
 modules-center = date
-modules-right = pulseaudio backlight cpu temperature system-cpu-frequency memory battery
+modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory battery
 
 
 module-margin = 0
@@ -237,12 +237,20 @@ interval = 5
 format-background = ${colors.background}    
 format-foreground = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/redshift-display]
+type = custom/script
+exec = redshift-display
+interval = 1
+click-left = redshift-toggle
+format-background = ${colors.background}
+format-foreground = ${colors.secondary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = false
 interval = 5
-format-volume = "<ramp-volume> <label-volume>"
-format-muted = <label-muted>
+format-volume = "<ramp-volume> <label-volume> "
+format-muted = "<label-muted> "
 label-muted = "   Muted"
 ramp-volume-0 ="  "
 ramp-volume-1 ="   "
@@ -257,7 +265,7 @@ type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 format = <label>
-label = "  %percentage%% "
+label = " %percentage%% "
 format-background = ${colors.background}
 format-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

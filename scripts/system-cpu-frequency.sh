@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 c=0;t=0
 
