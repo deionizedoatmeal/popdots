@@ -276,6 +276,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up1; exec --no-startup-id 
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-down1; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
+bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
+
 #############
 # BACKLIGHT #
 #############
