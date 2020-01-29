@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -height 4 -width 10"
+rofi_command="rofi -height 4 -width 15"
 
 ### Options ###
 power_off=" poweroff"
@@ -13,10 +13,10 @@ options="$power_off\n$reboot\n$lock\n$log_out"
 chosen="$(echo -e "$options" | $rofi_command -dmenu -p "session" -selected-row 2)"
 case $chosen in
     $power_off)
-        promptmenu --yes-command "systemctl poweroff" --query "Shutdown?"
+        systemctl poweroff
         ;;
     $reboot)
-        promptmenu --yes-command "systemctl reboot" --query "Reboot?"
+        systemctl reboot
         ;;
     $lock)
         lock
