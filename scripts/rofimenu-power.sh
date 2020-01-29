@@ -1,11 +1,24 @@
 #!/bin/bash
 
-preformance_command="system76-power profile performance"
-balanced_command="system76-power profile balanced"
-battery_command="system76-power profile battery"
+rofi_command="rofi -height 4 -width 15"
 
-rofi_command="rofi"
+### Options ###
+preformance=" preformance"
+balanced=" balanced"
+battery=" battery"
+# Variable passed to rofi
+options="$preformance\n$balanced\n$battery"
 
-options=$'performance\nbalanced\nbattery\n' 
+chosen="$(echo -e "$options" | $rofi_command -dmenu -p "profile" -selected-row 2)"
+case $chosen in
+    $preformance)
+        system76-power profile performance
+        ;;
+    $balanced)
+        system76-power profile balanced
+        ;;
+    $battery)
+        system76-power profile battery
+        ;;
+esac
 
-eval \$"$(echo "$options" | $rofi_command -dmenu -p "")_command"

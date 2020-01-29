@@ -7,10 +7,10 @@ secondary = ${xrdb:color3:#222}
 alert = ${xrdb:color7:#222}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [bar/main]
-width = 3140
-height = 54
-offset-x = 30
-offset-y = 20
+width = 98.1250%
+height = 03.0000%
+offset-x = 00.9375%
+offset-y = 01.1111%
 bottom = false
 fixed-center = true
 line-size = 2
@@ -34,9 +34,9 @@ font-0 = Iosevka Nerd Font:pixelsize=24;4
 font-1 = Iosevka Nerd Font:size=24;4
 font-2 = Iosevka Nerd Font:size=41;8
 
-modules-left = workspaces
+modules-left = i3
 modules-center = date
-modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory battery
+modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery
 
 
 module-margin = 0
@@ -68,7 +68,7 @@ format-padding = 1
 icon-default = 
  
 format = <label-state>
-format-background = ${colors.background}
+format-background = ${colors.foreground}
 label-active = 
 label-occupied = 
 label-urgent = 
@@ -117,46 +117,15 @@ format-background = ${colors.background}
 format-foreground = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+pin-workspaces = true
 index-sort = true
-wrapping-scroll = false
+enable-click = true
+enable-scroll = true
+format-padding = 1
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.primary}
-label-focused-foreground = ${colors.foreground}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-; Separator in between workspaces
-; label-separator = |
-
-ws-icon-0 = 1;❶ 
+ws-icon-0 = 1;❶
 ws-icon-1 = 2;❷
 ws-icon-2 = 3;❸
 ws-icon-3 = 4;❹
@@ -165,24 +134,96 @@ ws-icon-5 = 6;❻
 ws-icon-6 = 7;❼
 ws-icon-7 = 8;❽
 ws-icon-8 = 9;❾
+ws-icon-9 = 10;❿
 
+icon-default = 
+
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+; NOTE: Icon will be available as the %icon% token inside label-*
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = ${colors.background}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %name%
+label-focused-foreground = ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 1
+
+; Separator in between workspaces
+label-separator = |
+label-separator-foreground = ${colors.foreground}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/power-profile-check]
+type = custom/script
+exec = power-profile-check
+interval = 1
+format-background = ${colors.background}    
+format-foreground = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]                                                                
 type = internal/battery
-;full-at = 99
+full-at = 96
 time-format = %H:%M
 battery = BAT0
 adapter = AC
 format-charging = <animation-charging><label-charging>
 format-charging-background = ${colors.background}
+format-charging-foreground = ${colors.primary}
 format-charging-padding = 1
 label-charging = " %percentage%%"
 format-discharging = <ramp-capacity><label-discharging>
-format-discharging-background = ${colors.background}
 format-discharging-padding = 1
 label-discharging = " %percentage%%"
+label-discharging-foreground = ${colors.primary}
 format-full = <label-full>
+format-full-foreground = ${colors.primary}
 label-full = " %percentage%% "
 
 format-full-prefix = " "
@@ -199,7 +240,7 @@ ramp-capacity-9 = 
  
 ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-1-foreground = ${colors.alert}
-ramp-capacity-foreground   = ${colors.foreground}
+ramp-capacity-foreground   = ${colors.primary}
 ;bar-capacity-width = 10
  
 animation-charging-0 = 
@@ -224,7 +265,7 @@ format-foreground = ${colors.primary}
 [module/memory]
 type = internal/memory
 format = <label>
-label = "  %percentage_used%%"
+label = "  %percentage_used%% "
 
 interval = 5
 format-background = ${colors.background}
