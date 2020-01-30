@@ -81,14 +81,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-
-# PAPER MODE
-bindsym $mod+p floating toggle; resize set 1600px 1600px; $center
-
-#exec_always --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-#exec --no-startup-id gnome-flashback
+bindsym $mod+Shift+space floating toggle; resize set 1600px 1600px; $center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -204,32 +197,25 @@ mode "Resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "Resize"
+bindsym $mod+r mode "resize"
 
-###############################
-# POLYBAR, COMPTON AND OTHERS #
-###############################
-
+######################################
+# POLYBAR, COMPTON AND OTHER STARTUP #
+######################################
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id flashfocus
 
 
-###########
-# BORDERS #
-###########
-for_window [class="^.*"] border pixel 0
-
 ####################
 # GAPS AND BORDERS #
 ####################
 border_radius 8
-
 set $gap_width 25
-
 gaps top $gap_width
 gaps inner $gap_width
+for_window [class="^.*"] border pixel 0
 
 
 #bindsym $mod+o exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
@@ -244,15 +230,20 @@ gaps inner $gap_width
 focus_follows_mouse no
 
 ##############
-# OTHER BINDS #
+# SCREENSHOT #
 ##############
 bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id click1
+
+#############
+# BLUETOOTH #
+#############
+bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 
 
 ####################
 # FLOATING WINDOWS #
 ####################
-for_window [class="Steam"] floating enable
+#for_window [class="Steam"] floating enable
 for_window [class="Nautilus"] floating enable
 for_window [class="feh"] floating enable
 
@@ -276,7 +267,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up1; exec --no-startup-id 
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-down1; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
-bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 
 #############
 # BACKLIGHT #
