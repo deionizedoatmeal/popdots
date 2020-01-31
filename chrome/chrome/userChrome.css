@@ -569,8 +569,6 @@ url(chrome://browser/content/pageinfo/pageInfo.xul) {
   box-shadow: 0 1px 4px var(--in-content-border-focus)!important;
   border-color: var(--in-content-border-focus)!important
 }
-
-
 #PopupAutoCompleteRichResult .autocomplete-richlistbox,
 .searchbar-treebody::-moz-tree-row {
   background-color: var(--in-content-box-background)!important
@@ -1323,7 +1321,7 @@ statuspanel .statuspanel-label {
 
 :hover > #nav-bar,
 #nav-bar:focus-within {
-  max-height: 40px !important;
+  max-height: 32px !important;
   transition: max-height 0.2s ease-in-out, min-height 0.2s ease-in-out !important;
 }
 
