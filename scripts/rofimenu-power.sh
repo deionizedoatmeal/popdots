@@ -4,8 +4,8 @@ rofi_command="rofi -height 4 -width 15"
 
 ### Options ###
 preformance=" preformance"
-balanced=" balanced"
-battery=" battery"
+balanced=" balanced"
+battery=" battery"
 # Variable passed to rofi
 options="$preformance\n$balanced\n$battery"
 
