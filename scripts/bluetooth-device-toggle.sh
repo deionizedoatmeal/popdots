@@ -8,6 +8,7 @@ i=0
 
 
 echo $(bluetoothctl info $address | sed -n -e 's/^.*Connected: //p')
+
 if [ "$(bluetoothctl info $address | sed -n -e 's/^.*Connected: //p')" == "yes" ]
 then
     echo "connected, going to disconnect"

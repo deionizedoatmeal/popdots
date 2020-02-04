@@ -4,6 +4,7 @@
 # my super key broke :(
 set $mod Mod1
 
+
 # Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
 font pango:monospace 16
 
@@ -52,7 +53,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show-icons -show drun
 
 # change focus by using the cursor keys:
 bindsym $mod+Left focus left
@@ -180,7 +181,7 @@ bindsym $mod+Shift+p exec rofimenu-power
 
 
 # resize window (you can also use the mouse for that)
-mode "Resize" {
+mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -239,6 +240,10 @@ bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id cl
 #############
 bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 
+##########
+# RANGER #
+##########
+#bindsym $mod+l exec gnome-terminal -e ranger 
 
 ####################
 # FLOATING WINDOWS #
