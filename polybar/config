@@ -14,13 +14,14 @@ offset-y = 01.1111%
 bottom = false
 fixed-center = true
 line-size = 2
-padding-right = 5
-tray-detached = true
-tray-maxsize = 48
-tray-offset-x = -30 
+padding-right = 2
+#tray-detached = true
+#tray-maxsize = 48
+#tray-offset-x = -30 
 radius = 30.0
-tray-position = right
-tray-padding = 2
+tray-position = none
+#tray-padding = 2
+
 
 # Don't set wm-restack and don't override-redirect
 wm-restack = i3
@@ -36,7 +37,7 @@ font-2 = Iosevka Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery
+modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery network
 
 
 module-margin = 0
@@ -173,6 +174,7 @@ label-focused-padding = 1
 ; Default: %icon%  %name%
 label-unfocused = %index%
 label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.secondary}
 
 ; Available tokens:
 ;   %name%
@@ -182,6 +184,8 @@ label-unfocused-padding = 1
 ; Default: %icon%  %name%
 label-visible = %index%
 label-visible-padding = 1
+label-visible-foreground = ${colors.secondary}
+
 
 ; Available tokens:
 ;   %name%
@@ -196,7 +200,7 @@ label-urgent-padding = 1
 
 ; Separator in between workspaces
 label-separator = |
-label-separator-foreground = ${colors.foreground}
+label-separator-foreground = ${colors.secondary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/power-profile-check]
@@ -213,43 +217,43 @@ full-at = 96
 time-format = %H:%M
 battery = BAT0
 adapter = AC
-format-charging = <animation-charging><label-charging>
+format-charging =<animation-charging><label-charging>
 format-charging-background = ${colors.background}
 format-charging-foreground = ${colors.primary}
-format-charging-padding = 1
-label-charging = " %percentage%%"
-format-discharging = <ramp-capacity><label-discharging>
-format-discharging-padding = 1
-label-discharging = " %percentage%%"
+format-charging-padding = 0
+label-charging = " %percentage%% "
+format-discharging =<ramp-capacity><label-discharging>
+format-discharging-padding = 0
+label-discharging = " %percentage%% "
 label-discharging-foreground = ${colors.primary}
-format-full = <label-full>
+format-full =<label-full>
 format-full-foreground = ${colors.primary}
 label-full = " %percentage%% "
 
-format-full-prefix = " "
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+format-full-prefix = ""
+ramp-capacity-0 =""
+ramp-capacity-1 =""
+ramp-capacity-2 =""
+ramp-capacity-3 =""
+ramp-capacity-4 =""
+ramp-capacity-5 =""
+ramp-capacity-6 =""
+ramp-capacity-7 =""
+ramp-capacity-8 =""
+ramp-capacity-9 =""
  
 ramp-capacity-0-foreground = ${colors.alert}
 ramp-capacity-1-foreground = ${colors.alert}
 ramp-capacity-foreground   = ${colors.primary}
 ;bar-capacity-width = 10
  
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-5 = 
-animation-charging-6 = 
+animation-charging-0 =
+animation-charging-1 =
+animation-charging-2 =
+animation-charging-3 =
+animation-charging-4 =
+animation-charging-5 =
+animation-charging-6 =
 
 animation-charging-framerate = 750
 
@@ -265,7 +269,7 @@ format-foreground = ${colors.primary}
 [module/memory]
 type = internal/memory
 format = <label>
-label = "  %percentage_used%% "
+label = "   %percentage_used%%  "
 
 interval = 5
 format-background = ${colors.background}
@@ -290,43 +294,34 @@ format-foreground = ${colors.secondary}
 type = internal/pulseaudio
 use-ui-max = false
 interval = 5
-format-volume = "<ramp-volume> <label-volume> "
-format-muted = "<label-muted> "
-label-muted = "   Muted"
+format-volume = "<ramp-volume> <label-volume>  "
+format-muted = "<label-muted>  "
+label-muted = "   0%"
 ramp-volume-0 ="  "
 ramp-volume-1 ="   "
 ramp-volume-2 =" 墳"
 format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.primary}
 format-muted-background = ${colors.background}
-format-muted-foreground = ${colors.alert}
+format-muted-foreground = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
 enable-scroll = true
 format = <label>
-label = " %percentage%% "
+label = " %percentage%%  "
 format-background = ${colors.background}
 format-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/wireless-network]
+[module/network]
 type = internal/network
-format-connected =  
+format-connected =" 直"
+format-disconnected =" 睊"
 interface = wlp59s0
 format-disconnected-background = ${colors.alert}
-format-connected-background = ${colors.foreground}
-format-connected-foreground = ${colors.background}
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/ip]
-type = internal/network
-interface = wlo1
-format-connected =  <label-connected>
-format-disconnected = <label-disconnected>
-label-disconnected = Not Connected
-label-connected = %local_ip%
-format-connected-background = {colors.foreground}
-format-connected-foreground = {colors.background}
+format-connected-background = ${colors.background}
+format-connected-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
@@ -335,6 +330,6 @@ date =  %A %b %e
 time = %l:%M %p
 format =  <label>
 label = %time%, %date%
-format-foreground = #f8f8f2
+format-foreground = ${colors.primary}
 ;format-background = ${colors.background-alt}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

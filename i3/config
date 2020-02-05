@@ -204,7 +204,8 @@ bindsym $mod+r mode "resize"
 # POLYBAR, COMPTON AND OTHER STARTUP #
 ######################################
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id nm-applet
+#exec_always --no-startup-id nm-applet
+exec_always --no-startup-id redshift-toggle
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id flashfocus
 
