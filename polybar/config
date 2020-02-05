@@ -319,9 +319,10 @@ type = internal/network
 format-connected =" 直"
 format-disconnected =" 睊"
 interface = wlp59s0
-format-disconnected-background = ${colors.alert}
+format-disconnected-background = ${colors.background}
 format-connected-background = ${colors.background}
 format-connected-foreground = ${colors.secondary}
+format-disconnected-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
