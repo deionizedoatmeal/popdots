@@ -15,6 +15,8 @@ mkdir ~/.config/polybar/
 mkdir ~/.config/rofi/
 mkdir ~/.config/compton/
 mkdir ~/.config/zathura/
+mkdir ~/.config/nvim/
+mkdir ~/.config/ranger/
 
 #move dotfiles into corresponding config directories
 cd ..
@@ -23,7 +25,18 @@ cp -r polybar/* ~/.config/polybar/
 cp -r rofi/* ~/.config/rofi/
 cp -r compton/* ~/.config/compton/
 cp -r zathura/* ~/.config/zathura/
+cp -r ranger/* ~/.config/ranger/
+cp -r nvim/* ~/.config/nvim/
 cp .bashrc ~/
 cp .Xresources ~/
+read -r -p "Would you like to install desktop config? [y/N]" response
+if [[ "$response" =~ ^([Yy])+$ ]]
+then
+    cp i3/config_desk ~/.config/i3/config
+    cp polybar/config_desk ~/.config/polybar/config
+    cp rofi/config_desk ~/.config/rofi/config
+fi
 
-echo 'remember to manually set up the userChrome.css config for firefox' 
+
+
+echo 'remember to manually set up the config for firefox' 
