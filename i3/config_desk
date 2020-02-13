@@ -81,7 +81,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle; resize set 1600px 1600px; $center
+bindsym $mod+Shift+space floating toggle; resize set 600px 700px; $center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
