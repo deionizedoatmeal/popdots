@@ -114,6 +114,8 @@ if ! shopt -oq posix; then
 fi
 
 
+source $HOME/.cargo/env
+
 #######
 #PYWAL#
 #######
