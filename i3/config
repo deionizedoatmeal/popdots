@@ -1,6 +1,7 @@
 # see https://i3wm.org/docs/userguide.html for a complete reference!
 
 
+# my super key broke :(
 set $mod Mod4
 
 
@@ -248,10 +249,17 @@ bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 ####################
 # FLOATING WINDOWS #
 ####################
-#for_window [class="Steam"] floating enable
-for_window [class="Nautilus"] floating enable
+for_window [class="nautilus"] floating enable
 for_window [class="feh"] floating enable
-
+for_window [class="com.github.donadigo.eddy"] floating enable
+for_window [class="gnome-disks"] floating enable
+for_window [class="gnome-font-viewer"] floating enable
+for_window [class="eog"] floating enable
+for_window [class="evince"] floating enable
+for_window [class="baobab"] floating enable
+for_window [class="system-config-printer"] floating enable
+for_window [class="seahorse"] floating enable
+for_window [class="popsicle-gtk"] floating enable
 
 ########
 # LOCK #
