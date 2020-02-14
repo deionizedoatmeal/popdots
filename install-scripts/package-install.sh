@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# change the GDM background 
+sudo cp ../blurrr.jpg /usr/share/backgrounds/pop/kate-hazen-mort1mer.png 
+
 # add PPAs
 sudo add-apt-repository -u ppa:snwh/ppa
 
