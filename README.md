@@ -1,6 +1,6 @@
 *read me under construction... screenshots are up to date*
 
-# configs  
+# configuation files
 -i3wm (w/ gaps & rounded corners)  
 -polybar  
 -firefox  
@@ -9,13 +9,12 @@
 -rofi  
 -ranger  
 -zathura  
-# scripts  
-installation scripts for:  
+# installation scripts for:  
 -installing apt, python and rust packages  
 -installing the resolved fork of i3-gaps on a debian based system  
 -installing polybar on a debian based system  
 -moving config files and scripts into .config and /bin  
-functionality scripts for:  
+# functionality scripts for:  
 -volume adjustment  
 -backlight adjustment  
 -nice lock screen  
