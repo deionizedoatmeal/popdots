@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -height 4 -width 15"
+rofi_command="rofi -lines 4 -width 15"
 
 ### Options ###
 power_off=" poweroff"
