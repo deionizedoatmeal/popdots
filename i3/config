@@ -82,7 +82,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle; resize set 1600px 1600px; $center
+bindsym $mod+Shift+space floating toggle; $center
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -203,8 +203,9 @@ bindsym $mod+r mode "resize"
 ######################################
 # POLYBAR, COMPTON AND OTHER STARTUP #
 ######################################
+exec_always --no-startup-id killall -q compton
+exec_always --no-startup-id killall -q redshift
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#exec_always --no-startup-id nm-applet
 exec_always --no-startup-id redshift-toggle
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id flashfocus
@@ -214,19 +215,14 @@ exec_always --no-startup-id flashfocus
 # GAPS AND BORDERS #
 ####################
 border_radius 8
-set $gap_width 25
-gaps top $gap_width
-gaps inner $gap_width
+gaps top 25
+gaps inner 25
 for_window [class="^.*"] border pixel 0
 
-
-#bindsym $mod+o exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
-#    '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
-#        i3-msg gaps inner current set 0; \
-#    else \
-#        i3-msg gaps inner current set $gap_width; \
-#    fi"
-
+##############
+# PAPER MODE #
+##############
+bindsym $mod+p exec --no-startup-id paper-mode-toggle
 
 # don't follow mouse focus
 focus_follows_mouse no
