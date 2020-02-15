@@ -4,6 +4,7 @@
 # scripts
 # screenshots
 ![Clock](/screenshots/2020-02-15-025155_3200x1800_scrot.png)
+![Clock](/screenshots/2020-02-15-022234_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-025728_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-025019_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-023947_3200x1800_scrot.png)
