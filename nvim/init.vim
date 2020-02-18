@@ -21,16 +21,27 @@ nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
 
 au BufEnter * :hi EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-au BufEnter * :Minimap
+"au BufEnter * :Minimap
 au BufEnter * :hi VertSplit ctermbg=bg ctermfg=bg
 
-let g:minimap_highlight='Visual'
-
+"plugins
 call plug#begin('~/.config/nvim/plugs')
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'dylanaraps/wal.vim'
+Plug 'lervag/vimtex'
 call plug#end()
 
+"minimap
+let g:minimap_highlight='Visual'
+
+"vim tex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+"colors
 colorscheme wal

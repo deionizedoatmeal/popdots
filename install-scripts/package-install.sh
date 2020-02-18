@@ -6,8 +6,12 @@ sudo cp ../blurrr.jpg /usr/share/backgrounds/pop/kate-hazen-mort1mer.png
 # add PPAs
 sudo add-apt-repository -u ppa:snwh/ppa
 
-# download debs
+# .deb downloads
 wget https://github.com/chrisknepper/android-messages-desktop/releases/download/v3.1.0/android-messages-desktop_3.1.0_amd64.deb
+
+
+
+
 
 sudo apt update
 sudo apt upgrade
@@ -47,6 +51,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # install rust packages
 cargo install spotify-tui
 cargo install -f --git https://github.com/cjbassi/ytop ytop
+
+# install spotifyd
+https://github.com/Spotifyd/spotifyd/releases/download/v0.2.24/spotifyd-linux-full.tar.gz
+tar -xf spotify-linux-full.tar.gz
+sudo mv spotifyd /bin/spotifyd
 
 # install light utility
 git clone https://github.com/haikarainen/light.git
