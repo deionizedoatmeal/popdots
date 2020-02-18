@@ -72,6 +72,7 @@ echo 'backlight utility installed'
 sudo pip3 install pywal
 sudo pip install flashfocus
 sudo pip3 install protonvpn-cli
+sudo pip3 install inkscape-figures
 echo 'python packages installed'
 
 echo 'package install complete'

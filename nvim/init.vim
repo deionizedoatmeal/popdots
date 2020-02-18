@@ -31,6 +31,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'dylanaraps/wal.vim'
 Plug 'lervag/vimtex'
+Plug 'sirver/ultisnips'
 call plug#end()
 
 "minimap
@@ -43,5 +44,12 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
+"utilsnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 "colors
 colorscheme wal
+
+
