@@ -1,8 +1,14 @@
 #!/bin/bash
+# by ian k. bania 
+# feb '20
 
-grepstuff=$(i3-msg -t get_tree | grep -oP 'gaps":{"inner":0,"outer":0,"top":0,"right":.{0,3}' | tail -1 | grep -o '.\{3\}$')
 
-echo $grepstuff
+#grepstuff=$(i3-msg -t get_tree | grep -oP 'gaps":{"inner":0,"outer":0,"top":0,"right":.{0,3}' | tail -1 | grep -o '.\{3\}$')
+#grepstuff=$()
+
+grepstuff=$(i3-msg -t get_tree | grep -oP '750' | tail -1)
+
+#echo $grepstuff
 
 if [ $grepstuff -eq 750 ]; then
     i3-msg gaps right current set 0;
