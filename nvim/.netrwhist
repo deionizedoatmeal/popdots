@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/ian'
+let g:netrw_dirhist_2='/home/ian/Repositories'
+let g:netrw_dirhist_3='/home/ian/Repositories/sundial'
+let g:netrw_dirhist_4='/home/ian/Repositories/popdots/scripts'
+let g:netrw_dirhist_5='/home/ian/.config/nvim/plugs/limelight.vim'
+let g:netrw_dirhist_6='/home/ian/.config/nvim'
+let g:netrw_dirhist_7='/home/ian/.config'
+let g:netrw_dirhist_8='/home/ian'
+let g:netrw_dirhist_9='/home/ian/.config/nvim'
