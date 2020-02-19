@@ -4,8 +4,21 @@ rofi_command="rofi -lines 3 -width 15"
 
 ### Options ###
 zero=" power toggle"
-first=" headphones"
-second=" earbuds"
+
+if [ "$(bluetoothctl info D8:AF:F1:A9:BE:D7 | sed -n -e 's/^.*Connected: //p')" == "yes" ]
+then
+    first=" headphones <-"
+else
+    first=" headphones"
+fi
+
+if [ "$(bluetoothctl info D1:64:9F:2F:F5:D3 | sed -n -e 's/^.*Connected: //p')" == "yes" ]
+then
+    second=" earbuds <-"
+else
+    second=" earbuds"
+fi
+
 # Variable passed to rofi
 options="$zero\n$first\n$second"
 

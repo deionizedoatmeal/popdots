@@ -1,11 +1,32 @@
 #!/bin/bash
 
 rofi_command="rofi -lines 3 -width 15"
+profile="$(system76-power profile | sed -n -e 's/^.*Profile: //p')"               
+
 
 ### Options ###
-preformance=" preformance"
-balanced=" balanced"
-battery=" battery"
+if [ "$profile" = "Performance" ]
+then
+    preformance=" performance <-"
+else
+    preformance=" performance"
+fi
+
+if [ "$profile" = "Balanced" ]
+then
+    balanced=" balanced <-"
+else
+    balanced=" balanced"
+fi
+
+
+if [ "$profile" = "Battery" ]
+then
+    battery=" battery <-"
+else
+    battery=" battery"
+fi
+
 # Variable passed to rofi
 options="$preformance\n$balanced\n$battery"
 
