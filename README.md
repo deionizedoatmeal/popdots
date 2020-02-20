@@ -1,29 +1,29 @@
 *read me under construction... screenshots are up to date*
 
 # configuation files
--i3wm (w/ gaps & rounded corners)  
--polybar  
--firefox  
--neovim  
--comptom  
--rofi  
--ranger  
--zathura  
+- i3wm (w/ gaps & rounded corners)  
+- polybar  
+- firefox  
+- neovim  
+- comptom  
+- rofi  
+- ranger  
+- zathura  
 # installation scripts for:  
--installing apt, python and rust packages  
--installing the resolved fork of i3-gaps on a debian based system  
--installing polybar on a debian based system  
--moving config files and scripts into .config and /bin  
+- installing apt, python and rust packages  
+- installing the resolved fork of i3-gaps on a debian based system  
+- installing polybar on a debian based system  
+- moving config files and scripts into .config and /bin  
 # functionality scripts for:  
--volume adjustment  
--backlight adjustment  
--nice lock screen  
--toggling redshift & displaying redhshift status in polybar  
--displaying cpu frequency in polybar  
--displaying powerusage profile in polybar  
--using rofi to change power profile  
--using rofi to exit session  
--using rofi to connect to bluetooth devices  
+- volume adjustment  
+- backlight adjustment  
+- nice lock screen  
+- toggling redshift & displaying redhshift status in polybar  
+- displaying cpu frequency in polybar  
+- displaying powerusage profile in polybar  
+- using rofi to change power profile  
+- using rofi to exit session  
+- using rofi to connect to bluetooth devices  
 # screenshots  
 ![Clock](/screenshots/2020-02-15-025155_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-022234_3200x1800_scrot.png)
