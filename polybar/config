@@ -37,7 +37,7 @@ font-2 = Iosevka Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery network
+modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery network
 
 
 module-margin = 0
@@ -201,6 +201,14 @@ label-urgent-padding = 1
 ; Separator in between workspaces
 label-separator = |
 label-separator-foreground = ${colors.secondary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/bluetooth-display]
+type = custom/script
+exec = bluetooth-display
+interval = 1
+format-background = ${colors.background}    
+format-foreground = ${colors.primary}
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/power-profile-check]
@@ -296,9 +304,9 @@ use-ui-max = false
 interval = 5
 format-volume = "<ramp-volume> <label-volume>  "
 format-muted = "<label-muted>  "
-label-muted = "   0%"
-ramp-volume-0 ="  "
-ramp-volume-1 ="   "
+label-muted ="  0%"
+ramp-volume-0 =" "
+ramp-volume-1 =" "
 ramp-volume-2 =" 墳"
 format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.primary}
