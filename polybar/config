@@ -37,7 +37,7 @@ font-2 = Iosevka Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency memory power-profile-check battery network
+modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency-display memory power-profile-display battery network
 
 
 module-margin = 0
@@ -211,9 +211,9 @@ format-foreground = ${colors.primary}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/power-profile-check]
+[module/power-profile-display]
 type = custom/script
-exec = power-profile-check
+exec = power-profile-display
 interval = 1
 format-background = ${colors.background}    
 format-foreground = ${colors.primary}
@@ -283,9 +283,9 @@ interval = 5
 format-background = ${colors.background}
 format-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/system-cpu-frequency]
+[module/system-cpu-frequency-display]
 type = custom/script
-exec = system-cpu-frequency
+exec = system-cpu-frequency-display
 interval = 5
 format-background = ${colors.background}    
 format-foreground = ${colors.primary}

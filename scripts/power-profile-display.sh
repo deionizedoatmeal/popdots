@@ -16,7 +16,7 @@ fi
 
 if [ "$profile" = "Performance" ]
 then
-    echo "|"
+    echo "|"
 fi
 
 

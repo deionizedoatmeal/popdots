@@ -7,9 +7,9 @@ profile="$(system76-power profile | sed -n -e 's/^.*Profile: //p')"
 ### Options ###
 if [ "$profile" = "Performance" ]
 then
-    preformance=" performance <-"
+    preformance=" performance <-"
 else
-    preformance=" performance"
+    preformance=" performance"
 fi
 
 if [ "$profile" = "Balanced" ]
