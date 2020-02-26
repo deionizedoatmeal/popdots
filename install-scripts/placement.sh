@@ -29,14 +29,5 @@ cp -r ranger/* ~/.config/ranger/
 cp -r nvim/* ~/.config/nvim/
 cp .bashrc ~/
 cp .Xresources ~/
-read -r -p "Would you like to install desktop config? [y/N]" response
-if [[ "$response" =~ ^([Yy])+$ ]]
-then
-    cp i3/config_desk ~/.config/i3/config
-    cp polybar/config_desk ~/.config/polybar/config
-    cp rofi/config_desk ~/.config/rofi/config
-fi
+cp -r chrome/* ~/.mozilla/firefox/*.default-release/chrome/
 
-
-
-echo 'remember to manually set up the config for firefox' 

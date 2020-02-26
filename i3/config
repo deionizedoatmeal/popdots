@@ -2,11 +2,6 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
-#DESK/LAP
-#font pango:monospace 16
-font pango:monospace 8
-
 ##############
 # WAL COLORS #
 ##############
@@ -29,17 +24,10 @@ client.background       $bg
 ########
 # FONT #
 ########
-#DESK/LAP
-#font pango:Iosevka Nerd Font 24
-font pango Iosevka Nerd Font 12
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
+#LAP
+font pango:Iosevka Nerd Font 24
+#DESK
+#font pango:Iosevka Nerd Font 8
 
 # RESIZE VARIABLES
 set $center move position center
@@ -53,7 +41,7 @@ bindsym $mod+Return exec gnome-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi (a program launcher)
+# start rofi 
 bindsym $mod+d exec rofi -show-icons -show drun
 
 # change focus by using the cursor keys:
@@ -63,10 +51,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left 
-bindsym $mod+Shift+Down move down 
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left 80 
+bindsym $mod+Shift+Down move down 80
+bindsym $mod+Shift+Up move up 80
+bindsym $mod+Shift+Right move right 80
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -78,9 +66,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle; $center
@@ -89,7 +77,7 @@ bindsym $mod+Shift+space floating toggle; $center
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -139,56 +127,32 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# don't follow mouse focus
+focus_follows_mouse no
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-
-####################
-# SESSION CONTROLS #
-####################
-#set $session " (E)xit     (P)oweroff     (R)eboot"
-#mode  $session {
-#         bindsym e exec $psst i3-msg exit; mode "default"
-#         bindsym p exec $psst systemctl poweroff; mode "default"
-#         bindsym r exec $psst systemctl reboot; mode "default"
-#         bindsym q mode "default"
-#         bindsym Escape mode "default"
-#}
-
+##############
+# ROFI MENUS # (make sure to place scripts into /bin)
+##############
 bindsym $mod+Shift+e exec rofimenu-exit
-
 bindsym $mod+Shift+p exec rofimenu-power
-
-
-##################
-#BATTERY SETTINGS#
-##################
-#bindsym $mod+Shift+p mode $powerctrl
-
-
-
+bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 ######################################
@@ -201,13 +165,10 @@ exec_always --no-startup-id redshift-toggle
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id flashfocus
 
-
 ####################
 # GAPS AND BORDERS #
 ####################
-#DESK/LAP
-#border_radius 8
-border_radius 6
+border_radius 8
 gaps top 25
 gaps inner 25
 for_window [class="^.*"] border pixel 0
@@ -217,23 +178,10 @@ for_window [class="^.*"] border pixel 0
 ##############
 bindsym $mod+p exec --no-startup-id paper-mode-toggle
 
-# don't follow mouse focus
-focus_follows_mouse no
-
 ##############
 # SCREENSHOT #
 ##############
 bindsym --release $mod+Print exec --no-startup-id scrot; exec --no-startup-id click1
-
-#############
-# BLUETOOTH #
-#############
-bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
-
-##########
-# RANGER #
-##########
-#bindsym $mod+l exec gnome-terminal -e ranger 
 
 ####################
 # FLOATING WINDOWS #
@@ -265,10 +213,9 @@ exec_always --no-startup-id xset dpms 200
 # AUDIO #
 #########
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up1; exec --no-startup-id click1 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id vol-down1; exec --no-startup-id click1 #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up; exec --no-startup-id click1 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
-
 
 #############
 # BACKLIGHT #
@@ -276,8 +223,6 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; e
 bindsym XF86MonBrightnessUp exec --no-startup-id light-up; exec --no-startup-id click0
 bindsym XF86MonBrightnessDown exec --no-startup-id light-down; exec --no-startup-id click0
 bindsym $mod+n exec --no-startup-id redshift-toggle
-
-#bindsym XF86TouchpadToggle exec ~/scripts/toggletouchpad.sh && exec --no-startup-id click0
 
 #############
 # FLOAT MAX #

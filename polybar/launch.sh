@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 (wal -i "$(< "${HOME}/.cache/wal/wal")")
 

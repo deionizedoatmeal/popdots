@@ -19,6 +19,7 @@ padding-right = 2
 #tray-maxsize = 48
 #tray-offset-x = -30 
 radius = 30.0
+#DESK radius = 13.0
 tray-position = none
 #tray-padding = 2
 
@@ -27,7 +28,6 @@ tray-position = none
 wm-restack = i3
 override-redirect = true
 
-
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -35,10 +35,17 @@ font-0 = Iosevka Nerd Font:pixelsize=24;4
 font-1 = Iosevka Nerd Font:size=24;4
 font-2 = Iosevka Nerd Font:size=41;8
 
+#DESK
+#font-0 = Iosevka Nerd Font:pixelsize=12;3
+#font-1 = Iosevka Nerd Font:size=12;3
+#font-2 = Iosevka Nerd Font:size=20;4
+
 modules-left = i3
 modules-center = date
 modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency-display memory power-profile-display battery network
 
+#DESK
+#modules-right = bluetooth-display pulseaudio redshift-display cpu temperature system-cpu-frequency-display memory network
 
 module-margin = 0
 cursor-click = pointer
@@ -331,6 +338,13 @@ format-disconnected-background = ${colors.background}
 format-connected-background = ${colors.background}
 format-connected-foreground = ${colors.secondary}
 format-disconnected-foreground = ${colors.secondary}
+
+#DESK
+#format-disconnected-background = ${colors.background}
+#format-connected-background = ${colors.background}
+#format-connected-foreground = ${colors.primary}
+#format-disconnected-foreground = ${colors.primary}
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date
