@@ -1,7 +1,0 @@
-else
-ifvtex
-ifvtexdvi
-ifvtexgex
-ifvtexhtml
-ifvtexpdf
-ifvtexps

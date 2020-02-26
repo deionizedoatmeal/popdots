@@ -11,9 +11,6 @@ sudo add-apt-repository "deb http://ppa.launchpad.net/samoilov-lex/aftl-stable/u
 wget https://github.com/chrisknepper/android-messages-desktop/releases/download/v3.1.0/android-messages-desktop_3.1.0_amd64.deb
 
 
-
-
-
 sudo apt update
 sudo apt upgrade
 
@@ -45,6 +42,10 @@ then
     sudo apt install -y $DESKTOP
 fi
 echo 'apt packages installed'
+
+
+# install nvim plugin manager
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

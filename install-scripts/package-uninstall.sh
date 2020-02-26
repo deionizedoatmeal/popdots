@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 PACKREMOVE='brltty geary gnome-calculator gnome-calendar gnome-contacts gnome-weather yelp'
 
