@@ -42,10 +42,10 @@ font-2 = Iosevka Nerd Font:size=41;8
 
 modules-left = i3
 modules-center = date
-modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency-display memory power-profile-display battery network
+modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency-display memory power-profile-display battery network vpn-display
 
 #DESK
-#modules-right = bluetooth-display pulseaudio redshift-display cpu temperature system-cpu-frequency-display memory network
+#modules-right = bluetooth-display pulseaudio redshift-display cpu temperature system-cpu-frequency-display memory network vpn-display
 
 module-margin = 0
 cursor-click = pointer
@@ -215,8 +215,6 @@ exec = bluetooth-display
 interval = 1
 format-background = ${colors.background}    
 format-foreground = ${colors.primary}
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/power-profile-display]
 type = custom/script
@@ -224,7 +222,14 @@ exec = power-profile-display
 interval = 1
 format-background = ${colors.background}    
 format-foreground = ${colors.primary}
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/vpn-display]
+type = custom/script
+exec = vpn-display
+interval = 1
+format-background = ${colors.background}    
+format-foreground = ${colors.secondary}
+#DESK format-foreground = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]                                                                
 type = internal/battery

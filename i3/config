@@ -142,6 +142,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec rofimenu-exit
 bindsym $mod+Shift+p exec rofimenu-power
 bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
+bindsym $mod+Shift+v exec --no-startup-id rofimenu-vpn
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
