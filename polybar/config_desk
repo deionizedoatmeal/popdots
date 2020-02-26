@@ -18,7 +18,7 @@ padding-right = 2
 #tray-detached = true
 #tray-maxsize = 48
 #tray-offset-x = -30 
-radius = 12
+radius = 15
 tray-position = none
 #tray-padding = 2
 
@@ -321,8 +321,8 @@ format-disconnected ="睊"
 interface = wlo1
 format-disconnected-background = ${colors.background}
 format-connected-background = ${colors.background}
-format-connected-foreground = ${colors.primary}
-format-disconnected-foreground = ${colors.primary}
+format-connected-foreground = ${colors.foreground}
+format-disconnected-foreground = ${colors.foreground}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/date]
 type = internal/date

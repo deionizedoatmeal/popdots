@@ -1,12 +1,11 @@
 # see https://i3wm.org/docs/userguide.html for a complete reference!
 
-
-# my super key broke :(
 set $mod Mod4
 
-
 # Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
-font pango:monospace 16
+#DESK/LAP
+#font pango:monospace 16
+font pango:monospace 8
 
 ##############
 # WAL COLORS #
@@ -30,7 +29,9 @@ client.background       $bg
 ########
 # FONT #
 ########
-font pango:Iosevka Nerd Font 24
+#DESK/LAP
+#font pango:Iosevka Nerd Font 24
+font pango Iosevka Nerd Font 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -165,16 +166,6 @@ bindsym $mod+Shift+p exec rofimenu-power
 ##################
 #BATTERY SETTINGS#
 ##################
-
-#set $powerctrl "Set Power Mode: (1) Battery   (2) Balenced   (3) Performance"
-#mode $powerctrl {
-#	bindsym 1 exec "system76-power profile battery"; mode "default"
-#	bindsym 2 exec "system76-power profile balanced"; mode "default"
-#	bindsym 3 exec "system76-power profile performance"; mode "default"
-#	bindsym q mode "default"
-#	bindsym Escape mode "default"
-#}
-
 #bindsym $mod+Shift+p mode $powerctrl
 
 
@@ -214,7 +205,9 @@ exec_always --no-startup-id flashfocus
 ####################
 # GAPS AND BORDERS #
 ####################
-border_radius 8
+#DESK/LAP
+#border_radius 8
+border_radius 6
 gaps top 25
 gaps inner 25
 for_window [class="^.*"] border pixel 0
