@@ -233,7 +233,7 @@ format-foreground = ${colors.secondary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/battery]                                                                
 type = internal/battery
-full-at = 96
+;full-at = 96
 time-format = %H:%M
 battery = BAT0
 adapter = AC
