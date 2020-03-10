@@ -122,3 +122,6 @@ source $HOME/.cargo/env
 
 # make colors persit when starting newterminal
 (cat ~/.cache/wal/sequences)
+
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
