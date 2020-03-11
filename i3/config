@@ -181,6 +181,7 @@ for_window [class="^.*"] border pixel 0
 # PAPER MODE #
 ##############
 bindsym $mod+p exec --no-startup-id paper-mode-toggle
+#DESK bindsym $mod+p exec --no-startup-id paper-mode-toggle-small
 
 ##############
 # SCREENSHOT #
