@@ -282,6 +282,7 @@ animation-charging-framerate = 750
 type = internal/cpu
 format = <label>
 label = " %percentage%%"
+;DESK label = "   %percentage%%" 
 interval = 5
 format-background = ${colors.background}
 format-foreground = ${colors.primary}

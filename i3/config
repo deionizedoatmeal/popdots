@@ -173,6 +173,8 @@ exec_always --no-startup-id flashfocus
 border_radius 8
 gaps top 25
 gaps inner 25
+#DESK gaps top 15
+#DESL gaps inner 15
 for_window [class="^.*"] border pixel 0
 
 ##############

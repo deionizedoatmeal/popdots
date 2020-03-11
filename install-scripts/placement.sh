@@ -30,4 +30,5 @@ cp -r nvim/* ~/.config/nvim/
 cp .bashrc ~/
 cp .Xresources ~/
 cp -r chrome/* ~/.mozilla/firefox/*.default-release/chrome/
+sudo cp -r fonts/* /usr/share/fonts/.
 
