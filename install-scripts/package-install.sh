@@ -22,7 +22,7 @@ sudo apt update
 sudo apt upgrade
 
 # packages i use
-SYS="gnupg2 openssh-client openssh-server macchanger libssl-dev speedtest-cli transmission-cli transmission-daemon openvpn tty-clock dialog exfat-utils lm-sensors compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans rofi mpg123 system76-driver pass imagemagick feh gnome-tweak-tool htop neovim python-neovim python3-neovim tlp tlp-rdw cmake python-pip python3-pip gcc powertop"
+SYS="ncdu gnupg2 openssh-client openssh-server macchanger libssl-dev speedtest-cli transmission-cli transmission-daemon openvpn tty-clock dialog exfat-utils lm-sensors compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans rofi mpg123 system76-driver pass imagemagick feh gnome-tweak-tool htop neovim python-neovim python3-neovim tlp tlp-rdw cmake python-pip python3-pip gcc powertop"
 APPS="vlc darktable inkscape neofetch steam atom blender gimp spotify-client zathura ranger" 
 LAPTOP=""
 DESKTOP="system76-driver-nvidia"
