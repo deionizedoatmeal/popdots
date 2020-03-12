@@ -173,15 +173,12 @@ exec_always --no-startup-id flashfocus
 border_radius 8
 gaps top 25
 gaps inner 25
-#DESK gaps top 15
-#DESL gaps inner 15
 for_window [class="^.*"] border pixel 0
 
 ##############
 # PAPER MODE #
 ##############
 bindsym $mod+p exec --no-startup-id paper-mode-toggle
-#DESK bindsym $mod+p exec --no-startup-id paper-mode-toggle-small
 
 ##############
 # SCREENSHOT #
@@ -221,12 +218,17 @@ bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
 bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up; exec --no-startup-id click1 #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
+bindsym F6 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase sound volume
+bindsym F5 exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease sound volume
+bindsym F3 exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
 #############
 # BACKLIGHT #
 #############
 bindsym XF86MonBrightnessUp exec --no-startup-id light-up; exec --no-startup-id click0
 bindsym XF86MonBrightnessDown exec --no-startup-id light-down; exec --no-startup-id click0
+bindsym F9 exec --no-startup-id light-up; exec --no-startup-id click0
+bindsym F8 exec --no-startup-id light-down; exec --no-startup-id click0
 bindsym $mod+n exec --no-startup-id redshift-toggle
 
 #############
