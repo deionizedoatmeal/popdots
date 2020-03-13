@@ -77,10 +77,10 @@ fi
 
 
 # install spotifyd
-read -r -p "Would you like to install Spotifyd? [y/N]" response
+read -r -p "Would you like to install Spotifyd v0.2.24? [y/N]" response
 if [[ "$response" =~ ^([Yy])+$ ]]
 then
-    https://github.com/Spotifyd/spotifyd/releases/download/v0.2.24/spotifyd-linux-full.tar.gz
+    wget https://github.com/Spotifyd/spotifyd/releases/download/v0.2.24/spotifyd-linux-full.tar.gz
     tar -xf spotify-linux-full.tar.gz
     sudo mv spotifyd /bin/spotifyd
 fi
