@@ -113,15 +113,21 @@ if ! shopt -oq posix; then
   fi
 fi
 
+########
+# PASS #
+########
+# some more aliases
+alias pass-pull='pass git pull origin master'
+alias pass-push='pass git push origin master'
 
+########
+# RUST #
+########
 source $HOME/.cargo/env
 
 #######
 #PYWAL#
 #######
-
 # make colors persit when starting newterminal
 (cat ~/.cache/wal/sequences)
 
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
