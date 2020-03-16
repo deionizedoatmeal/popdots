@@ -170,7 +170,7 @@ exec_always --no-startup-id flashfocus
 ####################
 # GAPS AND BORDERS #
 ####################
-border_radius 8
+border_radius 16
 gaps top 25
 gaps inner 25
 for_window [class="^.*"] border pixel 0
