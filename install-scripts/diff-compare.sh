@@ -20,6 +20,8 @@ echo "#####ranger/rifle.conf######"
 diff ../ranger/rifle.conf ~/.config/ranger/rifle.conf
 echo "#####nvim/init.vim######"
 diff ../nvim/init.vim ~/.config/nvim/init.vim
+echo "#####dunst/dunstrc######"
+diff ../dunst/dunstrc ~/.config/dunst/dunstrc
 echo "#####.bashrc######"
 diff ../.bashrc ~/.bashrc
 echo "#####.Xresources######"
