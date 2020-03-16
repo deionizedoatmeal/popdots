@@ -110,6 +110,7 @@ then
     sudo pip install flashfocus
     sudo pip3 install protonvpn-cli
     sudo pip3 install inkscape-figures
+    sudo pip3 install spotdl
     echo 'python packages installed'
 fi
 
