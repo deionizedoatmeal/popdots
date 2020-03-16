@@ -28,7 +28,8 @@ format = "<b>%s</b>\n%b"
 sort = no
 
 # Show how many messages are currently hidden (because of geometry).
-indicate_hidden = yes
+indicate_hidden = no
+hide_duplicate_count = true
 
 # Alignment of message text.
 # Possible values are "left", "center" and "right".

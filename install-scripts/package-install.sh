@@ -102,17 +102,17 @@ then
 fi
 
 # install dunst
-read -r -p "Would you like to install dunst (a notifcation service)? [y/N]" response
-if [[ "$response" =~ ^([Yy])+$ ]]
-then
-    git clone https://github.com/dunst-project/dunst.git
-    cd dunst
-    make
-    sudo make install
-    cd ..
-    sudo rm -r dunst
-    echo 'dunst installed'
-fi
+#read -r -p "Would you like to install dunst (a notifcation service)? [y/N]" response
+#if [[ "$response" =~ ^([Yy])+$ ]]
+#then
+#    git clone https://github.com/dunst-project/dunst.git
+#    cd dunst
+#    make
+#    sudo make install
+#    cd ..
+#    sudo rm -r dunst
+#    echo 'dunst installed'
+#fi
 
 
 # install python packages

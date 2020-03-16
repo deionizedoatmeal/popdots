@@ -162,6 +162,7 @@ bindsym $mod+r mode "resize"
 ######################################
 exec_always --no-startup-id killall -q compton
 exec_always --no-startup-id killall -q redshift
+exec_always --no-startup-id killall -q dunst
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id redshift-toggle
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
@@ -216,11 +217,11 @@ exec_always --no-startup-id xset dpms 200
 # AUDIO #
 #########
 bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
-bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up; exec --no-startup-id click1 #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume, play a sound, send a notification
+bindsym XF86AudioLowerVolume exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
-bindsym F6 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase sound volume
-bindsym F5 exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease sound volume
+bindsym F6 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume
+bindsym F5 exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease volume
 bindsym F3 exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
 
 #############
