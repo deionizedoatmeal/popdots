@@ -8,16 +8,17 @@
 - comptom  
 - rofi  
 - ranger  
-- zathura  
+- zathura
+- dunst
 # installation scripts for:  
 - installing apt, python and rust packages  
 - installing the resolved fork of i3-gaps on a debian based system  
 - installing polybar on a debian based system  
 - moving config files and scripts into .config and /bin  
 # functionality scripts for:  
-- volume adjustment  
-- backlight adjustment  
-- nice lock screen  
+- volume adjustment
+- backlight adjustment
+- nice lock screen 
 - toggling redshift & displaying redhshift status in polybar  
 - displaying cpu frequency in polybar  
 - displaying powerusage profile in polybar  
