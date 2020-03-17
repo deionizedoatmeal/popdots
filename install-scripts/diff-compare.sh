@@ -14,6 +14,10 @@ echo "##### compton/compton.conf ######"
 diff ../compton/compton.conf ~/.config/compton/compton.conf
 echo "##### zathura/zathurarc ######"
 diff ../zathura/zathurarc ~/.config/zathura/zathurarc
+echo "##### spotify-tui/config.yml ######"
+diff ../spotify-tui/config.yml ~/.config/spotify-tui/config.yml
+echo "##### spotifyd/config ######"
+diff ../spotifyd/config ~/.config/spotifyd/config
 echo "##### ranger/rc.conf ######"
 diff ../ranger/rc.conf ~/.config/ranger/rc.conf
 echo "##### ranger/rifle.conf ######"

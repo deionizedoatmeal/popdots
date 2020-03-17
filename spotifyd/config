@@ -1,0 +1,12 @@
+[global]
+# Your Spotify account name.
+username = ian.k.bania
+
+# Your Spotify account password.
+password = * YOUR PASSWORD HERE *
+
+backend = alsa
+
+# The audio bitrate. 96, 160 or 320 kbit/s
+bitrate = 320
+

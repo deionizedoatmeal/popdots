@@ -1,31 +1,33 @@
-*read me under construction... screenshots are up to date*
-
-# configuation files
+# configuation files for:
 - i3wm (w/ gaps & rounded corners)  
-- polybar  
-- firefox  
-- neovim  
-- comptom  
 - rofi  
-- ranger  
-- zathura
 - dunst
-# installation scripts for:  
-- installing apt, python and rust packages  
+- polybar  
+- firefox
+- neovim 
+- comptom  
+- ranger
+- zathura
+- spotify-tui + spotifyd
+# installation scripts:  
+- installing apt, python and rust packages
 - installing the resolved fork of i3-gaps on a debian based system  
-- installing polybar on a debian based system  
-- moving config files and scripts into .config and /bin  
-# functionality scripts for:  
-- volume adjustment
-- backlight adjustment
-- nice lock screen 
-- toggling redshift & displaying redhshift status in polybar  
-- displaying cpu frequency in polybar  
-- displaying powerusage profile in polybar  
-- using rofi to change power profile  
-- using rofi to exit session  
-- using rofi to connect to bluetooth devices  
-# screenshots  
+- installing polybar on a debian based system
+- installing fonts, cloned repos and doing some housekeeping
+- moving config files and scripts into neccesary locations 
+# functionality scripts:  
+- wrapper for launching and kill spotifyd and spotify-tui simulataneously
+- volume adjustment w/ notification
+- backlight adjustment w/ notification
+- pretty lock screen
+- toggle redshift & displaying redhshift status in polybar  
+- display cpu frequency in polybar  
+- display power useage profile in polybar  
+- using rofi to change power profile
+- using rofi to exit session
+- using rofi to connect to bluetooth devices
+- using rofi to connect to wireless networks (comming soon)
+# screenshots (slightly out of date)
 ![Clock](/screenshots/2020-02-15-025155_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-022234_3200x1800_scrot.png)
 ![Clock](/screenshots/2020-02-15-025728_3200x1800_scrot.png)
