@@ -22,6 +22,8 @@ echo "#####nvim/init.vim######"
 diff ../nvim/init.vim ~/.config/nvim/init.vim
 echo "#####dunst/dunstrc######"
 diff ../dunst/dunstrc ~/.config/dunst/dunstrc
+echo "#####wal/templates/colors-rofi-dark.rasi#####"
+diff ../wal/templates/colors-rofi-dark.rasi ~/.config/wal/templates/colors-rofi-dark.rasi
 echo "#####.bashrc######"
 diff ../.bashrc ~/.bashrc
 echo "#####.Xresources######"

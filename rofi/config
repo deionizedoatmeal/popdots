@@ -8,8 +8,7 @@ rofi.width: 800
 rofi.padding: 50
 rofi.font: Iosevka Nerd Font 24
 #DESK rofi.font Iosevka Nerd Font 12
-rofi.bw: 3
-rofi.separator-style: solid
+rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
 

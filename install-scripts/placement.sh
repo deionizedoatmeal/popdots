@@ -18,6 +18,7 @@ mkdir ~/.config/zathura/
 mkdir ~/.config/nvim/
 mkdir ~/.config/ranger/
 mkdir ~/.config/dunst/
+mkdir ~/.config/wal/
 
 #move dotfiles into corresponding config directories
 cd ..
@@ -29,6 +30,7 @@ cp -r zathura/* ~/.config/zathura/
 cp -r ranger/* ~/.config/ranger/
 cp -r nvim/* ~/.config/nvim/
 cp -r dunst/* ~/.config/dunst/
+cp -r wal/* ~/.config/wal/
 cp .bashrc ~/
 cp .Xresources ~/
 cp -r chrome/* ~/.mozilla/firefox/*.default-release/chrome/
