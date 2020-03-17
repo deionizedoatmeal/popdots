@@ -40,7 +40,7 @@ font-2 = Iosevka Nerd Font:size=41;8
 #font-1 = Iosevka Nerd Font:size=14;4
 #font-2 = Iosevka Nerd Font:size=22;4
 
-modules-left = i3
+modules-left = i3 spotify
 modules-center = date
 modules-right = bluetooth-display pulseaudio redshift-display backlight cpu temperature system-cpu-frequency-display memory power-profile-display battery network vpn-display
 
@@ -221,6 +221,14 @@ type = custom/script
 exec = power-profile-display
 interval = 1
 format-background = ${colors.background}    
+format-foreground = ${colors.primary}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = spotify-display -f '{song} - {artist} {play_pause}'
 format-foreground = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/vpn-display]

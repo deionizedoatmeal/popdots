@@ -10,6 +10,11 @@ NAME=${f::-3}
 sudo cp -p $f /bin/$NAME
 done
 
+for f in *.py; do
+NAME=${f::-3}
+sudo cp -p $f /bin/$NAME
+done
+
 mkdir ~/.config/i3/
 mkdir ~/.config/polybar/
 mkdir ~/.config/rofi/

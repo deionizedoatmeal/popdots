@@ -44,3 +44,9 @@ for f in *.sh; do
         diff $f /bin/$NAME 
 done
 
+for f in *.py; do
+        NAME=${f::-3}
+        echo "##########"
+        echo $NAME
+        diff $f /bin/$NAME 
+done
