@@ -34,7 +34,7 @@ cp -r compton/* ~/.config/compton/
 cp -r zathura/* ~/.config/zathura/
 cp -r ranger/* ~/.config/ranger/
 cp -r nvim/* ~/.config/nvim/
-cp -r dunst/* ~/.config/dunst/
+ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
 cp -r wal/* ~/.config/wal/
 cp .bashrc ~/
 cp .Xresources ~/

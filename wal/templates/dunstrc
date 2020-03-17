@@ -1,0 +1,66 @@
+[global]
+font = Iosevka Nerd Font 16
+markup = yes
+plain_text = no
+format = "<b>%s</b>\n%b"
+sort = no
+indicate_hidden = no
+hide_duplicate_count = true
+alignment = center
+bounce_freq = 0
+show_age_threshold = -1
+word_wrap = no
+ignore_newline = no
+stack_duplicates = yes
+hide_duplicates_count = yes
+geometry = "600x50-75-75"
+corner_radius = 16
+shrink = yes
+transparency = 5
+idle_threshold = 0
+monitor = 0
+follow = none
+sticky_history = yes
+history_length = 15
+show_indicators = no
+line_height = 3
+separator_height = 2
+padding = 6
+horizontal_padding = 6
+separator_color = frame
+startup_notification = false
+dmenu = /usr/bin/dmenu -p dunst:
+browser = /usr/bin/firefox -new-tab
+icon_position = off
+max_icon_size = 80
+icon_path = /usr/share/icons/Paper/16x16/mimetypes/:/usr/share/icons/Paper/48x48/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/48x48/notifications/:/usr/share/icons/Paper/48x48/emblems/
+frame_width = 3
+
+[shortcuts]
+close = ctrl+space
+close_all = ctrl+shift+space
+history = ctrl+grave
+context = ctrl+shift+period
+
+[urgency_low]
+    background = "{background}"
+    foreground = "{color1}"
+    frame_color = "{color1}"
+
+[urgency_normal]
+    background = "{background}"
+    foreground = "{color1}"
+    frame_color = "{color1}"
+[urgency_critical]
+    background = "{background}"
+    foreground = "{color1}"
+    frame_color = "{color1}"
+
+[Spotify]
+appname = Spotify
+format = " %s\n%b"
+new_icon = Spotify
+timeout = 6
+shrink = no
+
+# vim: ft=cfg

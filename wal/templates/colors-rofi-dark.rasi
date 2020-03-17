@@ -23,7 +23,7 @@
     background-color: @background;
     background: {background};
     foreground: {foreground};
-    border-color: {color2};
+    border-color: {color1};
     spacing: 2;
 }}
 
