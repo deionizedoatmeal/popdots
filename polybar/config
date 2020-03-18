@@ -333,11 +333,12 @@ format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.primary}
 format-muted-background = ${colors.background}
 format-muted-foreground = ${colors.primary}
+enable-scroll = false
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
-enable-scroll = true
+enable-scroll = false
 format = <label>
 label = " %percentage%%  "
 format-background = ${colors.background}
