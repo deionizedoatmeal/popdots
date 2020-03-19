@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Spotify (TUI)
+GenericName=TUI Music Player
+Icon=spotify-client
+TryExec=spotify-tui
+Exec=sh -c "wal -Rnq; spotify-tui"
+Terminal=true 
+Categories=Audio;Music;Player;AudioVideo;
+StartupWMClass=spotify-tui
