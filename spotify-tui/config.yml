@@ -6,12 +6,12 @@ theme:
   error_text: Red
   hint: Yellow
   hovered: Green
-  inactive: Cyan
+  inactive: White
   playbar_background: Black
   playbar_progress: Red
   playbar_text: Red
   selected: Red
-  text: "255, 255, 255"
+  text: White
 
 behavior:
   seek_milliseconds: 5000
