@@ -44,17 +44,17 @@ context = ctrl+shift+period
 
 [urgency_low]
     background = "{background}"
-    foreground = "{color1}"
-    frame_color = "{color1}"
+    foreground = "{color2}"
+    frame_color = "{color2}"
 
 [urgency_normal]
     background = "{background}"
-    foreground = "{color1}"
-    frame_color = "{color1}"
+    foreground = "{color2}"
+    frame_color = "{color2}"
 [urgency_critical]
     background = "{background}"
-    foreground = "{color1}"
-    frame_color = "{color1}"
+    foreground = "{foreground}"
+    frame_color = "{foreground}"
 
 [Spotify]
 appname = Spotify
