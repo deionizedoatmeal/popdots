@@ -32,6 +32,8 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'dylanaraps/wal.vim'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 "minimap
@@ -50,6 +52,6 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 "colors
-colorscheme wal
+colorscheme onedark
 
 

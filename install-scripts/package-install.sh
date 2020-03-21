@@ -124,6 +124,7 @@ then
     sudo pip3 install protonvpn-cli
     sudo pip3 install inkscape-figures
     sudo pip3 install spotdl
+    sudo pip3 install cl-chess
     echo 'python packages installed'
 fi
 
