@@ -31,6 +31,7 @@
     background-color: @background;
     border: 3;
     padding: 2.5ch;
+    border-radius: 16px;
 }}
 
 #mainbox {{

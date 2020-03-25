@@ -6,13 +6,12 @@ unredir-if-possible = true;
 
 # Shadow
 shadow = true; # Enabled client-side shadows on windows.
-no-dock-shadow = false; # draw shadows on dock/panel windows.
-no-dnd-shadow = false; # draw shadows on DND windows.
-clear-shadow = false; # Zero the part of the shadow's mask behind the window (experimental).
-shadow-radius = 20; # The blur radius for shadows. (default 12)
-shadow-offset-x = -16; # The left offset for shadows. (default -15)
-shadow-offset-y = -16; # The top offset for shadows. (default -15)
-shawdow-opacity = 1
+no-dock-shadow = true; # dont draw shadows on dock/panel windows.
+no-dnd-shadow = false; # Don't draw shadows on DND windows.
+clear-shadow = true; # Zero the part of the shadow's mask behind the window (experimental).
+shadow-radius = 16; # The blur radius for shadows. (default 12)
+shadow-offset-x = -15; # The left offset for shadows. (default -15)
+shadow-offset-y = -15; # The top offset for shadows. (default -15)
 shadow-exclude = [
  "_GTK_FRAME_EXTENTS@:c"
 ];
@@ -30,7 +29,7 @@ detect-client-opacity = true;
 wintypes:
 {
  # tooltip = { shadow = false; };
- tooltip = { fade = true; shadow = true; opacity = 0.5; focus = true; };
+ tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; };
 };
 
 ## Opacity

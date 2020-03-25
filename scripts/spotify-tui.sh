@@ -1,8 +1,8 @@
 #!/bin/bash
 # launches spotifyd and spotify-tui while listening to kill spotifyd when the tui is closed
 
+cat ~/.cache/wal/sequences
 spotifyd --device pulse --config-path $HOME/.config/spotifyd/config
-
 spt
 
 while true; do
