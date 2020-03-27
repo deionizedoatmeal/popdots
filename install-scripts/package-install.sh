@@ -25,7 +25,7 @@ sudo apt upgrade
 SYS="libxss-dev gnupg2 openssh-client macchanger libssl-dev speedtest-cli transmission-cli transmission-daemon openvpn tty-clock dialog exfat-utils lm-sensors compton libxcb-render0-dev libffi-dev i3lock ffmpeg python-dev python-cffi fonts-fantasque-sans rofi mpg123 system76-driver pass imagemagick feh gnome-tweak-tool htop neovim python-neovim python3-neovim tlp tlp-rdw cmake python-pip python3-pip gcc powertop"
 APPS="vlc gnuplot ncdu torbrowser-launcher darktable inkscape neofetch steam atom blender gimp spotify-client zathura ranger" 
 LAPTOP=""
-DESKTOP="busybox busybox-initramfs dropbear-initramfs system76-driver-nvidia openssh-server"
+DESKTOP="rtop busybox busybox-initramfs dropbear-initramfs system76-driver-nvidia openssh-server"
 
 # install apt packages
 sudo apt install -y $SYS
@@ -125,6 +125,7 @@ then
     sudo pip3 install inkscape-figures
     sudo pip3 install spotdl
     sudo pip3 install cl-chess
+    sudo pip3 install wpgtk
     echo 'python packages installed'
 fi
 

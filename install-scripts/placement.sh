@@ -23,9 +23,9 @@ mkdir ~/.config/zathura/
 mkdir ~/.config/nvim/
 mkdir ~/.config/ranger/
 mkdir ~/.config/dunst/
-mkdir ~/.config/wal/
-mkdir ~/.config/spotify-tui
-mkdir ~/.config/spotifyd
+mkdir ~/.config/wal/templates/
+mkdir ~/.config/spotify-tui/
+mkdir ~/.config/spotifyd/
 
 #move dotfiles into corresponding config directories
 cd ..
@@ -38,8 +38,8 @@ cp -r ranger/* ~/.config/ranger/
 cp -r nvim/* ~/.config/nvim/
 ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
 cp -r wal/* ~/.config/wal/
-cp -r spotify-tui/* ~/spotify-tui/
-cp -r spotifyd/* ~/spotifyd/
+cp -r spotify-tui/* ~/.config/spotify-tui/
+cp -r spotifyd/* ~/.config/spotifyd/
 cp .bashrc ~/
 cp .Xresources ~/
 cp -r chrome/* ~/.mozilla/firefox/*.default-release/chrome/
