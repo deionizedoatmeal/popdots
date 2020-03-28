@@ -1,3 +1,8 @@
+These are my dotfiles and scripts for my personal system. My process after a fresh install is: 
+1) clone the repo 
+2) run package-install.sh, i3gaps-install.sh, polybar-install.sh, and placement.sh 
+3) reboot and migrate data
+
 # configuation files for:
 - i3wm (w/ gaps & rounded corners)  
 - kitty
