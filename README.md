@@ -1,5 +1,6 @@
 # configuation files for:
 - i3wm (w/ gaps & rounded corners)  
+- kitty
 - rofi  
 - dunst
 - polybar  
@@ -16,6 +17,7 @@
 - installing fonts, cloned repos and doing some housekeeping
 - moving config files and scripts into neccesary locations 
 # functionality scripts:  
+- status, usage and monitoring
 - wrapper for launching and kill spotifyd and spotify-tui simulataneously
 - volume adjustment w/ notification
 - backlight adjustment w/ notification
