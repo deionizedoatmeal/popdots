@@ -12,20 +12,20 @@
 - spotify-tui + spotifyd
 # installation scripts:  
 - installing apt, python and rust packages
-- installing the resolved fork of i3-gaps on a debian based system  
+- installing ben friesen's fork of i3-gaps on a debian based system  
 - installing polybar on a debian based system
-- installing fonts, cloned repos and doing some housekeeping
+- installing fonts, cloning repos and doing some housekeeping
 - moving config files and scripts into neccesary locations 
 # functionality scripts:  
 - status, usage and monitoring
 - wrapper for launching and kill spotifyd and spotify-tui simulataneously
 - volume adjustment w/ notification
 - backlight adjustment w/ notification
-- pretty lock screen
-- toggle redshift & displaying redhshift status in polybar  
+- simple lock screen
+- toggle redshift & display redshift status in polybar  
 - display cpu frequency in polybar  
 - display power useage profile in polybar  
-- using rofi to change power profile
+- using rofi to change power usage profile
 - using rofi to exit session
 - using rofi to connect to bluetooth devices
 - using rofi to connect to wireless networks (comming soon)
