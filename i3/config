@@ -25,9 +25,7 @@ client.background       $bg
 # FONT #
 ########
 #LAP
-font pango:Iosevka Nerd Font 24
-#DESK
-#font pango:Iosevka Nerd Font 8
+font pango:JetBrains Mono ExtraBold 12
 
 # RESIZE VARIABLES
 set $center move position center
@@ -108,12 +106,9 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# custom workspace switching
-bindsym $mod+Prior workspace next
-bindsym $mod+Next workspace prev
-bindsym $mod+Home workspace $ws1
-bindsym $mod+End workspace $ws10
-
+# move workspace to other monitor
+bindsym $mod+Ctrl+Left move workspace to output VGA-0
+bindsym $mod+Ctrl+Right move workspace to output HDMI-0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -145,6 +140,11 @@ bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 bindsym $mod+Shift+v exec --no-startup-id rofimenu-vpn
 
 
+###########################
+# LIGHT/DARK THEME TOGGLE #
+###########################
+bindsym $mod+t exec theme-toggle
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -174,13 +174,14 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 ####################
 border_radius 16
 gaps top 25
-gaps inner 25
+gaps inner 15
 for_window [class="^.*"] border pixel 0
 
 ##############
 # PAPER MODE #
 ##############
-bindsym $mod+p exec --no-startup-id paper-mode-toggle
+bindsym $mod+p exec --no-startup-id paper-mode-toggle 200
+bindsym $mod+o exec --no-startup-id paper-mode-toggle 400
 
 ##############
 # SCREENSHOT #
@@ -220,17 +221,29 @@ bindsym XF86AudioPlay exec --no-startup-id "playerctl play-pause"
 bindsym XF86AudioRaiseVolume exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume
 bindsym XF86AudioLowerVolume exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease volume
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
-bindsym F6 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume
+
+#TRITON[
+#bindsym F6 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume
+#bindsym F5 exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease volume
+#bindsym F3 exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
+#]
+
+#NEPTUNE[
+bindsym F4 exec --no-startup-id vol-up; exec --no-startup-id click1 #increase volume
 bindsym F5 exec --no-startup-id vol-down; exec --no-startup-id click1 #decrease volume
-bindsym F3 exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
+bindsym F6 exec --no-startup-id amixer -D pulse sset Master toggle; exec --no-startup-id click1 #mute sound
+#]
 
 #############
 # BACKLIGHT #
 #############
-bindsym XF86MonBrightnessUp exec --no-startup-id light-up; exec --no-startup-id click0
-bindsym XF86MonBrightnessDown exec --no-startup-id light-down; exec --no-startup-id click0
-bindsym F9 exec --no-startup-id light-up; exec --no-startup-id click0
-bindsym F8 exec --no-startup-id light-down; exec --no-startup-id click0
+#TRITON[
+#bindsym XF86MonBrightnessUp exec --no-startup-id light-up; exec --no-startup-id click0
+#bindsym XF86MonBrightnessDown exec --no-startup-id light-down; exec --no-startup-id click0
+#bindsym F9 exec --no-startup-id light-up; exec --no-startup-id click0
+#bindsym F8 exec --no-startup-id light-down; exec --no-startup-id click0
+#]
+
 bindsym $mod+n exec --no-startup-id redshift-toggle
 
 #############
