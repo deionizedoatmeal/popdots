@@ -1,0 +1,1 @@
+xrandr --output HDMI-0 --primary --mode 1920x1080 --output VGA-0 --mode 1280x1024 --rate 75.02 --left-of HDMI-0

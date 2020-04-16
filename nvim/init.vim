@@ -20,9 +20,9 @@ set foldnestmax=10      " 10 nested fold max
 nnoremap <space> za
 set foldmethod=indent   " fold based on indent level
 
-au BufEnter * :hi EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+au BufEnter * :hi EndOfBuffer guibg=bg guifg=bg
 "au BufEnter * :Minimap
-au BufEnter * :hi VertSplit ctermbg=bg ctermfg=bg
+au BufEnter * :hi VertSplit guibg=bg guifg=bg
 
 "plugins
 call plug#begin('~/.config/nvim/plugs')

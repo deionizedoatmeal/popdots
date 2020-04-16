@@ -11,7 +11,7 @@ grepstuff=$(i3-msg -t get_tree | grep -oP '.{0,250}"focused":true' | grep -oP 'r
 
 echo $grepstuff
 
-if [ $grepstuff -eq 750 ]; then
+if [ $grepstuff -eq 350 ]; then
     i3-msg gaps right current set 0;
     i3-msg gaps left current set 0;
     i3-msg split h;

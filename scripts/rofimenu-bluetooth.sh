@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -lines 3 -width 15"
+rofi_command="rofi -lines 3 -width 18"
 
 ### Options ###
 zero=" power toggle"
