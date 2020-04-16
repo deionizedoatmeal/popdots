@@ -1,20 +1,121 @@
+/*
+** In order for userChrome.css to work, you need to open `about:config` and change
+** `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
+*/
+
+
 /* Import the CSS file.
    Change 'ian' to your username. */
 @import url('file:///home/ian/.cache/wal/colors.css');
 
+:root {
+	/*change the default blue accent color in many different elements.*/
+	--lwt-accent-color: var(--color2) !important;
 
-/* Hide scrollbar */
-  
-  :root{
-    scrollbar-width: none !important;
-  }
-  }
-  
-  @-moz-document url(about:privatebrowsing) { 
-  
-  :root{
-    scrollbar-width: none !important;
-  }
-  }
+	/*color of highlighted text in the urlbar, searchbar, and other UI elements*/
+	--chrome-selection-background-color: var(--cursor) !important;
+}
 
+#navigator-toolbox {
+  -moz-appearance: none;
+  background-color: #0f111a00 !important;
+  border-top: none;
+}
+
+.browser-toolbar:not(.titlebar-color),
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[multiselected='true']:-moz-lwtheme,
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[selected='true']:-moz-lwtheme,
+
+box {
+  background-color: var(--color2) !important;
+  background-image: none !important;
+}
+* {
+  --tab-line-color: var(--background);
+  --tab-min-width: 76px;
+}
+
+#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
+#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
+#navigator-toolbox {
+  border: none !important;
+}
+#urlbar:not(.megabar):-moz-lwtheme,
+#urlbar.megabar:-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:-moz-lwtheme {
+  background-color: var(--background) !important;
+}
+#navigator-toolbox {
+  z-index: 1 !important;
+  --tabs-border-color: var(--color2) !important;
+}
+
+toolbox {
+  z-index: 1 !important;
+  margin-top: 0px !important;
+  margin-bottom: -40px !important;
+  height: 0 !important;
+}
+
+#nav-bar {
+  z-index: 1 !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out !important;
+}
+
+:hover > toolbox,
+toolbox:focus-within {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out !important ;
+}
+:hover > #nav-bar,
+toolbox:focus-within > #nav-bar {
+  opacity: 1;
+  background-color: var(--color2) !important;
+}
+
+/* SET THE BACKGROUND COLOR OF THE URL BAR HERE */
+
+#urlbar {
+  color: var(--foreground) !important;
+  caret-color: var(--color3);
+}
+
+#urlbar ::-moz-selection,
+.searchbar-textbox ::-moz-selection {
+   background-color: var(--color2) !important;
+   color: var(--cursor) !important;
+}
+
+#tracking-protection-icon-container {
+   background-color: var(--background) !important;
+}
+
+#tracking-protection-icon-animatable-image {
+   background-color: var(--background) !important;
+}
+
+#tracking-protection-icon-box {
+   background-color: var(--background) !important;
+}
+#identity-icon  {
+   background-color: var(--background)
+}
+
+#identity-box {
+   background-color: var(--background) !important;
+}
+
+#pageActionSeparator {
+   background-color: var(--background) !important;
+}
 
