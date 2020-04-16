@@ -80,6 +80,8 @@ toolbox:focus-within > #nav-bar {
   background-color: var(--color1) !important;
 }
 
+/* SET THE BACKGROUND COLOR OF THE URL BAR HERE */
+
 #urlbar {
   color: var(--foreground) !important;
   caret-color: var(--color3);
@@ -91,8 +93,11 @@ toolbox:focus-within > #nav-bar {
    color: var(--cursor) !important;
 }
 
-
 #tracking-protection-icon-container {
+   background-color: var(--background) !important;
+}
+
+#tracking-protection-icon-animatable-image {
    background-color: var(--background) !important;
 }
 
@@ -106,3 +111,8 @@ toolbox:focus-within > #nav-bar {
 #identity-box {
    background-color: var(--background) !important;
 }
+
+#pageActionSeparator {
+   background-color: var(--background) !important;
+}
+
