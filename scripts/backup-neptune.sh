@@ -1,5 +1,3 @@
 #!/bin/bash
 
-sudo rsync -avzLP --delete --exclude=".*" /home/ian/ /home/External/
-
-
+sudo rdiff-backup -v5 --exclude '/home/ian/.*' /home/ian/ /mnt/neptune_backup/
