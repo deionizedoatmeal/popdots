@@ -10,7 +10,7 @@
 
 :root {
 	/*change the default blue accent color in many different elements.*/
-	--lwt-accent-color: var(--color2) !important;
+	--lwt-accent-color: var(--color1) !important;
 
 	/*color of highlighted text in the urlbar, searchbar, and other UI elements*/
 	--chrome-selection-background-color: var(--cursor) !important;
@@ -39,7 +39,7 @@
   > .tab-background[selected='true']:-moz-lwtheme,
 
 box {
-  background-color: var(--color2) !important;
+  background-color: var(--background) !important;
   background-image: none !important;
 }
 * {
@@ -60,7 +60,7 @@ box {
 }
 #navigator-toolbox {
   z-index: 1 !important;
-  --tabs-border-color: var(--color2) !important;
+  --tabs-border-color: var(--background) !important;
 }
 
 toolbox {
@@ -84,7 +84,7 @@ toolbox:focus-within {
 :hover > #nav-bar,
 toolbox:focus-within > #nav-bar {
   opacity: 1;
-  background-color: var(--color2) !important;
+  background-color: var(--background) !important;
 }
 
 /* SET THE BACKGROUND COLOR OF THE URL BAR HERE */
@@ -96,7 +96,7 @@ toolbox:focus-within > #nav-bar {
 
 #urlbar ::-moz-selection,
 .searchbar-textbox ::-moz-selection {
-   background-color: var(--color2) !important;
+   background-color: var(--background) !important;
    color: var(--cursor) !important;
 }
 
