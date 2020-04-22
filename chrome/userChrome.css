@@ -22,6 +22,10 @@
   border-top: none;
 }
 
+.tabbrowser-tab .tab-label{
+    color: var(--color2) !important;
+}
+
 .browser-toolbar:not(.titlebar-color),
 #tabbrowser-tabs:not([movingtab])
   > .tabbrowser-arrowscrollbox
