@@ -34,6 +34,8 @@ Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-repeat'
+Plug 'svermeulen/vim-easyclip'
 call plug#end()
 
 "minimap
