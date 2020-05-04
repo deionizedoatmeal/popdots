@@ -139,23 +139,18 @@ bindsym $mod+Shift+p exec rofimenu-power
 bindsym $mod+Shift+b exec --no-startup-id rofimenu-bluetooth
 bindsym $mod+Shift+v exec --no-startup-id rofimenu-vpn
 
-
 ###########################
 # LIGHT/DARK THEME TOGGLE #
 ###########################
 bindsym $mod+t exec theme-toggle
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
+##########################          
+# RESIZE FLOATING WINDOW # (you can also use the mouse for that) 
+##########################                                           
+bindsym $mod+Shift+bracketleft resize shrink width 30 px or 30 ppt
+bindsym $mod+Shift+equal resize grow height 30 px or 30 ppt
+bindsym $mod+Shift+minus resize shrink height 30 px or 30 ppt
+bindsym $mod+Shift+bracketright resize grow width 30 px or 30 ppt
 
 ######################################
 # POLYBAR, COMPTON AND OTHER STARTUP #
