@@ -1,8 +1,4 @@
-These are my dotfiles and scripts for my personal system. My process after a fresh install is: 
-1) clone the repo 
-2) run package-install.sh, i3gaps-install.sh, polybar-install.sh, and placement.sh 
-3) reboot and migrate data
-
+I've now moved over to arch on both my systems, but I'm hoping to still maintain this, organize it a bit better and eventually get it to a point where the install scripts work perfectly. If you're into arch, or you just wanna see some of my more up to date configs for some of this software, check out my new repo [dots](https://github.com/deionizedoatmeal/dots)!
 # configuation files for:
 - i3wm (w/ gaps & rounded corners)  
 - kitty
