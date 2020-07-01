@@ -1,4 +1,4 @@
-I've now moved over to arch on both my systems, but I'm hoping to still maintain this, organize it a bit better and eventually get it to a point where the install scripts work perfectly. If you're into arch, or you just wanna see some of my more up to date configs for some of this software, check out my new repo [dots](https://github.com/deionizedoatmeal/dots)!
+I've now moved over to arch on both my systems, but I'm hoping to still maintain this, organize it a bit better and eventually get it to a point where the install scripts work perfectly. If you're into arch, or you just wanna see some of my more up to date configs for some of this software, check out my new repo [archdots](https://github.com/deionizedoatmeal/archdots)!
 # configuation files for:
 - i3wm (w/ gaps & rounded corners)  
 - kitty
